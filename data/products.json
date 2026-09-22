@@ -1,0 +1,92 @@
+[
+  {
+    "id": "product-1",
+    "name": "BLÅHAJ — Le requin de 100 cm",
+    "description": "Un requin en peluche de 100 cm. Tissu en polyester, rembourrage recyclé et lavage à la machine. Gros format, petites dents.",
+    "priceCents": 3999,
+    "currency": "CAD",
+    "images": [
+      "https://www.ikea.com/ca/en/images/products/blahaj-soft-toy-shark__0710175_pe727378_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/blahaj-soft-toy-shark__1143962_pe881669_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/blahaj-soft-toy-shark__1208865_pe908859_s5.jpg?f=m"
+    ],
+    "rating": 4.9,
+    "reviewCount": 3027,
+    "source": "https://www.ikea.com/ca/en/p/blahaj-soft-toy-shark-90373590/",
+    "checkedAt": "2026-09-21",
+    "video": null,
+    "seller": "IKEA Canada"
+  },
+  {
+    "id": "product-2",
+    "name": "IKEA 365+ — La tasse en verre",
+    "description": "Une tasse transparente de 36 cl en verre trempé. Compatible avec le lave-vaisselle et le micro-ondes. Une seule tasse, sans soucoupe.",
+    "priceCents": 299,
+    "currency": "CAD",
+    "images": [
+      "https://www.ikea.com/ca/en/images/products/ikea-365-mug-clear-glass__0713425_pe729518_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/ikea-365-mug-clear-glass__1195843_pe902617_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/ikea-365-mug-clear-glass__1339165_pe948404_s5.jpg?f=m"
+    ],
+    "rating": 4.7,
+    "reviewCount": 2456,
+    "source": "https://www.ikea.com/ca/en/p/ikea-365-mug-clear-glass-90279724/",
+    "checkedAt": "2026-09-21",
+    "video": null,
+    "seller": "IKEA Canada"
+  },
+  {
+    "id": "product-3",
+    "name": "POÄNG — Le fauteuil en bouleau",
+    "description": "Fauteuil en bois courbé, placage bouleau et coussin Knisa beige clair. Dossier haut. Fauteuil et coussin inclus, repose-pieds exclu.",
+    "priceCents": 11900,
+    "currency": "CAD",
+    "images": [
+      "https://www.ikea.com/ca/en/images/products/poaeng-armchair-birch-veneer-knisa-light-beige__0571500_pe666933_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/poaeng-armchair-birch-veneer-knisa-light-beige__0837298_pe666936_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/poaeng-armchair-birch-veneer-knisa-light-beige__0837295_pe666935_s5.jpg?f=m"
+    ],
+    "rating": 4.5,
+    "reviewCount": 1544,
+    "source": "https://www.ikea.com/ca/en/p/poaeng-armchair-birch-veneer-knisa-light-beige-s49306570/",
+    "checkedAt": "2026-09-21",
+    "video": null,
+    "seller": "IKEA Canada"
+  },
+  {
+    "id": "product-4",
+    "name": "TERTIAL — La lampe articulée",
+    "description": "Lampe de travail en acier gris foncé, bras et tête réglables. Fixation à pince et cordon de 1,5 m. Ampoule vendue séparément.",
+    "priceCents": 1999,
+    "currency": "CAD",
+    "images": [
+      "https://www.ikea.com/ca/en/images/products/tertial-work-lamp-dark-gray__0609306_pe684440_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/tertial-work-lamp-dark-gray__0879117_pe622662_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/tertial-work-lamp-dark-gray__1057480_ph179168_s5.jpg?f=m"
+    ],
+    "rating": 4.6,
+    "reviewCount": 2176,
+    "source": "https://www.ikea.com/ca/en/p/tertial-work-lamp-dark-gray-20355434/",
+    "checkedAt": "2026-09-21",
+    "video": null,
+    "seller": "IKEA Canada"
+  },
+  {
+    "id": "product-5",
+    "name": "DUKTIG — La mini-cuisine",
+    "description": "Cuisine pour enfants en bouleau, 72 × 40 × 109 cm. Évier, four et plaques lumineuses. Hauteur ajustable. Piles et accessoires vendus séparément.",
+    "priceCents": 11900,
+    "currency": "CAD",
+    "images": [
+      "https://www.ikea.com/ca/en/images/products/duktig-play-kitchen-birch__0756010_pe754469_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/duktig-play-kitchen-birch__0381881_pe560312_s5.jpg?f=m",
+      "https://www.ikea.com/ca/en/images/products/duktig-play-kitchen-birch__0878291_pe611110_s5.jpg?f=m"
+    ],
+    "rating": 4.7,
+    "reviewCount": 2536,
+    "source": "https://www.ikea.com/ca/en/p/duktig-play-kitchen-birch-60319972/",
+    "checkedAt": "2026-09-21",
+    "video": null,
+    "seller": "IKEA Canada"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "name": "Low Ball High Ball — playtest",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [3000],
+  "portsAttributes": {"3000": {"label": "Low Ball High Ball", "onAutoForward": "openBrowser"}},
+  "postAttachCommand": "npm start"
+}

@@ -1,1 +1,78 @@
-# lowhigh
+# Tester la démo avec bots
+
+La démo autonome se trouve dans `demo/index.html`. GitHub Pages publie uniquement ce dossier. Les produits de cette démo sont fixes; le chargement de produits live n’est pas encore branché.
+
+# Low Ball / High Ball
+
+Un jeu de prix multijoueur, navigateur, mobile d’abord. Prototype pour jouer entre amis.
+
+**Ce dépôt est l’unique source du projet : code, catalogue, documentation et tests. Aucun projet ChatGPT Sites.**
+
+## Tester entre amis sur GitHub
+
+1. Dans ce dépôt, cliquer **Code → Codespaces → Create codespace on main**.
+2. Le serveur démarre automatiquement sur le port **3000**. Sinon : `npm start` dans le terminal.
+3. Dans l’onglet **Ports**, clic droit sur **3000 → Port Visibility → Public** pour permettre aux amis de jouer sans compte GitHub. Seul le jeu est exposé, pas les fichiers privés du dépôt.
+4. Ouvrir l’adresse transférée du port 3000. Créer un salon et partager l’invitation.
+5. Garder le Codespace actif pendant la partie; l’arrêter après le test. Codespaces utilise le quota de ton compte et peut être facturé au-delà. La configuration ne crée aucun Codespace automatiquement.
+
+Le code seul ne constitue pas un serveur en ligne. **GitHub Pages ne peut pas exécuter ce serveur Node.** La V1 utilise Codespaces pour les tests; aucun hébergeur externe n’est créé.
+
+Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts séparément (pas « dupliquer l’onglet », qui peut copier la session) ou une fenêtre privée. Pour une soirée sur le réseau local : `npm start`, puis accéder à `http://ADRESSE_IP_DE_L_ORDINATEUR:3000` sur chaque téléphone.
+
+## Règles V1
+
+- 2 à 8 joueurs, pseudonyme sans compte, salon à code de 5 caractères.
+- 5 produits mélangés sans répétition dans une partie; 45 secondes par manche.
+- Chaque personne verrouille un prix; les autres estimations restent cachées jusqu’à la révélation.
+- Révélation lorsque tous ont répondu ou lorsque le délai expire.
+- Dollars canadiens, **avant taxes et livraison**, variante exacte décrite sur la fiche.
+- Précision : `max(0, arrondi(100 × (1 − écart absolu / prix réel)))`.
+- Bonus de **50** au plus proche. En cas d’égalité, chaque joueur à égalité reçoit le bonus.
+- Aucune réponse = 0 point, aucun bonus. Dépasser le prix est permis et pénalisé comme une sous-estimation équivalente.
+- L’hôte passe au produit suivant. Classement final, égalité possible, revanche avec scores remis à zéro.
+
+## Catalogue
+
+`data/products.json` contient cinq produits réels IKEA Canada : requin BLÅHAJ 100 cm, tasse IKEA 365+ 36 cl, fauteuil POÄNG bouleau/Knisa beige clair, lampe TERTIAL gris foncé et cuisine DUKTIG bouleau.
+
+Prix, notes et photos proviennent des fiches officielles référencées dans chaque entrée, consultées le **21 septembre 2026**. Les prix sont des instantanés de jeu, pas des prix en direct. Les descriptions françaises sont reformulées. Les notes agrégées sont affichées, pas des avis inventés. Trois photos par produit sont chargées depuis IKEA; leur disponibilité dépend du marchand. La source et le prix sont dévoilés après la manche.
+
+Champ `video` optionnel pris en charge (URL HTTPS directe IKEA, controls/playsinline), mais aucun clip n’est inclus dans ce premier catalogue. Les photos appartiennent au marchand; le prototype n’est ni affilié ni commandité par IKEA. Prévoir des médias autorisés avant une diffusion commerciale.
+
+Pour ajouter un produit : identifiant unique, nom, description de la variante, `priceCents` entier positif, `currency: CAD`, tableau `images`, note et nombre d’avis facultatifs, URL `source`, date `checkedAt`. Ne pas placer le catalogue dans `public/` : les prix doivent rester côté serveur. Le petit catalogue sera connu après une partie; élargir avant des tests répétés.
+
+## Architecture
+
+Node 22+, sans dépendance. HTML/CSS/JS natifs. Pas de base de données ni de clé secrète à configurer.
+
+- `server.js` : HTTP, fichiers publics explicitement autorisés, API JSON, limites de requêtes.
+- `game.js` : machine à états, identité, scores, droits de l’hôte et expiration.
+- `public/` : interface, saisie mobile, galerie, sons activables, vibrations disponibles et confettis respectant la réduction des animations.
+- `data/products.json` : catalogue privé côté serveur.
+- `test/game.test.js` : tests métier et intégration HTTP multijoueur.
+- `.github/workflows/tests.yml` : vérifications à chaque push/PR et à la demande dans Actions.
+- `.devcontainer/devcontainer.json` : lancement du playtest Codespaces.
+
+Les clients interrogent le serveur une fois par seconde. Chronomètre et points sont calculés côté serveur. L’API ne transmet ni le prix ni les réponses des autres avant révélation. Jeton joueur aléatoire en `sessionStorage`, envoyé par en-tête Authorization, jamais dans le lien d’invitation. Un rafraîchissement du même onglet reprend la session. La fermeture de l’onglet peut perdre cette session.
+
+Un salon est supprimé après 2 h sans activité; un redémarrage supprime tous les salons. L’hôte peut quitter explicitement et passe la main au prochain joueur. Après 60 s sans nouvelles de l’hôte, le prochain joueur actif prend le relais. Les joueurs absents restent dans la partie jusqu’à leur départ explicite; leur manche expire avec 0 point. Nouvelle arrivée seulement au lobby.
+
+Prototype monoprocessus pour petit groupe de confiance, pas un service public à grande échelle. Les personnes ayant accès au dépôt peuvent consulter les prix. Le nom du produit et les images permettent aussi de le rechercher : on joue sans magasiner en parallèle.
+
+## Tests
+
+```sh
+npm run check
+npm test
+```
+
+Aucune installation npm requise. Les tests couvrent la partie complète, l’absence de fuite des réponses, les réponses en double/tardives, les égalités, le chronomètre, l’identité, l’hôte, les départs, les salons expirés, les limites et les routes HTTP. Dans GitHub, consulter **Actions → Tests du jeu**.
+
+### Vérification humaine avant la soirée
+
+- Deux téléphones : invitation, pseudonymes, démarrage, photos et clavier décimal.
+- Estimations au-dessus/au-dessous, expiration et classement.
+- Rafraîchir pendant la manche : retrouver sa réponse verrouillée.
+- Couper/reprendre le réseau et vérifier la reprise.
+- Quitter avec l’hôte, terminer les cinq manches, relancer une revanche.

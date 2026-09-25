@@ -2,11 +2,13 @@ import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Game} from './game.js';
+import {fetchRecentProducts} from './scripts/update-products.js';
 const products=JSON.parse(await readFile(new URL('./data/products.json',import.meta.url),'utf8'));
 let liveProducts=[];
 try{liveProducts=JSON.parse(await readFile(new URL('./data/open-prices.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
-export function createServer(game=new Game([...products,...liveProducts])) {
+export function createServer(game=new Game([...products,...liveProducts]),catalogLoader=fetchRecentProducts) {
   const limits=new Map();
+  let lastRefresh=0,refreshPromise=null;
   const server=http.createServer(async(req,res)=>{
     const send=(status,body)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
     try {
@@ -28,10 +30,22 @@ export function createServer(game=new Game([...products,...liveProducts])) {
         if(req.method==='POST') {let body='';for await(const chunk of req){body+=chunk;if(body.length>4096)return send(413,{error:'Requête trop longue.'});}try{data=JSON.parse(body);}catch{return send(400,{error:'JSON invalide.'});}if(!data||typeof data!=='object'||Array.isArray(data))return send(400,{error:'Requête invalide.'});}
         if(url.pathname==='/api/create'&&req.method==='POST')return send(201,game.create(data.name));
         if(url.pathname==='/api/join'&&req.method==='POST')return send(200,game.join(data.code,data.name));
-        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|leave))?$/);
+        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|leave|refresh))?$/);
         if(!match)return send(404,{error:'Route introuvable.'});
         const token=req.headers.authorization?.replace(/^Bearer /,'');
         if(req.method==='GET'&&!match[2])return send(200,game.state(match[1],token));
+        if(req.method==='POST'&&match[2]==='refresh') {
+          const [room,player]=game.auth(match[1],token);
+          if(room.host!==player.id)return send(403,{error:'Seul l’hôte peut actualiser les produits.'});
+          if(room.phase!=='lobby'&&room.phase!=='finished')return send(400,{error:'Actualise les produits entre deux parties.'});
+          if(Date.now()-lastRefresh<15*60000)return send(429,{error:'Les produits ont déjà été actualisés. Réessaie dans 15 minutes.'});
+          refreshPromise ||= catalogLoader().then(fresh=>{
+            if(!Array.isArray(fresh)||fresh.length<5)throw Error('Catalogue insuffisant; produits précédents conservés.');
+            game.products=[...products,...fresh];lastRefresh=Date.now();return fresh.length;
+          }).finally(()=>{refreshPromise=null;});
+          const count=await refreshPromise;
+          return send(200,{...game.state(match[1],token),catalogCount:count});
+        }
         if(req.method==='POST'&&match[2])return send(200,game.action(match[1],token,match[2],data));
         return send(405,{error:'Méthode non permise.'});
       }

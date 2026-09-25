@@ -26,13 +26,18 @@ export function selectProducts(items, today=new Date()) {
   return products;
 }
 
-export async function updateProducts({request=fetch,destination=output,today=new Date()}={}) {
+export async function fetchRecentProducts({request=fetch,today=new Date()}={}) {
   const response=await request(endpoint,{headers:{Accept:'application/json','User-Agent':'LowHigh/0.1 (https://github.com/jutrasimon/lowhigh)'},signal:AbortSignal.timeout(25000)});
   if(!response.ok)throw Error(`Open Prices : HTTP ${response.status}`);
   const payload=await response.json();
   if(!Array.isArray(payload.items))throw Error('Réponse Open Prices invalide.');
   const products=selectProducts(payload.items,today);
   if(products.length<5)throw Error(`Seulement ${products.length} produits admissibles; catalogue précédent conservé.`);
+  return products;
+}
+
+export async function updateProducts({request=fetch,destination=output,today=new Date()}={}) {
+  const products=await fetchRecentProducts({request,today});
   const path=fileURLToPath(destination), temp=path+'.tmp';
   const content=JSON.stringify(products,null,2)+'\n';
   try {if(await readFile(path,'utf8')===content)return {count:products.length,changed:false};}catch(e){if(e.code!=='ENOENT')throw e;}

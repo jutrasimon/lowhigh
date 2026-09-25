@@ -5,6 +5,8 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {selectProducts,updateProducts} from '../scripts/update-products.js';
+import {createServer} from '../server.js';
+import {Game} from '../game.js';
 
 const today=new Date('2026-09-25T12:00:00Z');
 const sample=(id,overrides={})=>({id,type:'PRODUCT',currency:'CAD',price:14.49,price_per:null,date:'2026-09-19',
@@ -28,4 +30,24 @@ test('Une mise à jour insuffisante préserve le catalogue précédent',async()=
     assert.deepEqual(result,{count:5,changed:true});
     assert.equal(JSON.parse(await readFile(path,'utf8')).length,5);
   }finally{await rm(directory,{recursive:true,force:true});}
+});
+
+test('Seul l’hôte actualise le catalogue au lobby, sans interrompre les manches',async()=>{
+  const before=Array.from({length:5},(_,i)=>({id:'old'+i,priceCents:1000}));
+  const fresh=Array.from({length:5},(_,i)=>({id:'new'+i,priceCents:2000}));
+  const game=new Game(before),server=createServer(game,async()=>fresh);
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const base='http://127.0.0.1:'+server.address().port;
+  const post=async(path,data,token)=>{const r=await fetch(base+path,{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:JSON.stringify(data)});return{status:r.status,body:await r.json()};};
+  try{
+    const host=(await post('/api/create',{name:'Host'})).body;
+    const guest=(await post('/api/join',{name:'Guest',code:host.code})).body;
+    const route='/api/rooms/'+host.code;
+    assert.equal((await post(route+'/refresh',{},guest.token)).status,403);
+    assert.equal((await post(route+'/refresh',{},host.token)).body.catalogCount,5);
+    assert.deepEqual(game.products.map(p=>p.id).slice(-5),fresh.map(p=>p.id));
+    assert.equal((await post(route+'/refresh',{},host.token)).status,429);
+    await post(route+'/start',{},host.token);
+    assert.equal((await post(route+'/refresh',{},host.token)).status,400);
+  }finally{await new Promise(resolve=>server.close(resolve));}
 });

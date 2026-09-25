@@ -42,11 +42,13 @@ Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts sépar�
 
 ### Actualiser les produits
 
-Dans GitHub, ouvrir **Actions → Actualiser les produits → Run workflow** sur `main`. La commande récupère les derniers relevés en CAD, conserve les produits canadiens avec nom, photo et date des six derniers mois, puis publie `data/open-prices.json` si le catalogue change. Render redéploie automatiquement le commit. **Lancer entre deux parties**, car un redéploiement efface les salons actifs sur l’offre gratuite. Si la source échoue ou fournit moins de cinq produits, l’ancien catalogue est conservé.
+Dans un salon, **l’hôte clique « Actualiser les produits » avant de démarrer**. Le serveur récupère les relevés et les prochains salons utilisent aussitôt le catalogue renouvelé, sans interrompre une manche déjà commencée. Limite : une actualisation toutes les 15 minutes pour l’ensemble du serveur. Si la source est indisponible, le catalogue actuel reste en place. Les changements faits par ce bouton restent en mémoire jusqu’au prochain redémarrage.
+
+Pour conserver un instantané après les redémarrages, ouvrir **Actions → Actualiser les produits → Run workflow** sur `main` dans GitHub. La commande récupère les derniers relevés en CAD, conserve les produits canadiens avec nom, photo et date des six derniers mois, puis publie `data/open-prices.json` si le catalogue change. Si Render détecte le commit et redéploie, les salons en cours sont effacés : lancer cette action entre deux parties.
 
 En local : `npm run update:products`. Aucun compte ni clé API requis. La commande est manuelle; aucune mise à jour périodique n’est programmée.
 
-Les prix et informations Open Prices sont attribués dans le jeu et publiés séparément sous [ODbL](https://opendatacommons.org/licenses/odbl/1-0/). Les photos sont servies par Open Food Facts et créditées dans le jeu. Le vendeur, la date et le lien du relevé apparaissent à la révélation.
+Les prix et informations Open Prices sont attribués dans le jeu et publiés séparément sous [ODbL](https://opendatacommons.org/licenses/odbl/1-0/). Les photos sont servies par Open Food Facts et créditées dans le jeu. Le vendeur est visible pendant la manche; la date et le lien du relevé apparaissent à la révélation.
 
 Prix, notes et photos proviennent des fiches officielles référencées dans chaque entrée, consultées le **21 septembre 2026**. Les prix sont des instantanés de jeu, pas des prix en direct. Les descriptions françaises sont reformulées. Les notes agrégées sont affichées, pas des avis inventés. Trois photos par produit sont chargées depuis IKEA; leur disponibilité dépend du marchand. La source et le prix sont dévoilés après la manche.
 

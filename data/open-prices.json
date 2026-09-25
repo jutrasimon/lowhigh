@@ -1,0 +1,226 @@
+[
+  {
+    "id": "op-332830",
+    "provider": "open-prices",
+    "name": "Havarti",
+    "description": "Saputo · 750 g",
+    "seller": "Costco",
+    "priceCents": 1449,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/006/354/910/9955/front_fr.31.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/332830",
+    "checkedAt": "2026-09-19"
+  },
+  {
+    "id": "op-332829",
+    "provider": "open-prices",
+    "name": "Peanut Butter Pretzels",
+    "description": "Kirkland Signature · 55 oz",
+    "seller": "Costco",
+    "priceCents": 1389,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/009/661/933/6753/front_en.193.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/332829",
+    "checkedAt": "2026-09-19"
+  },
+  {
+    "id": "op-331777",
+    "provider": "open-prices",
+    "name": "Pain multigrains au levain",
+    "description": "Promise Gluten Free · 400 g",
+    "seller": "Walmart",
+    "priceCents": 798,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/081/300/202/0835/front_en.11.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/331777",
+    "checkedAt": "2026-09-17"
+  },
+  {
+    "id": "op-307679",
+    "provider": "open-prices",
+    "name": "Instant Oatmeal High Protein",
+    "description": "QUAKER",
+    "seller": "Walmart Supercentre",
+    "priceCents": 417,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/005/557/711/3219/front_fr.21.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/307679",
+    "checkedAt": "2026-08-11"
+  },
+  {
+    "id": "op-304959",
+    "provider": "open-prices",
+    "name": "Turkish delights",
+    "description": "Hazerbaba · 454g",
+    "seller": "Marché Adonis",
+    "priceCents": 899,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/077/033/810/7435/front_en.3.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/304959",
+    "checkedAt": "2026-08-08"
+  },
+  {
+    "id": "op-304962",
+    "provider": "open-prices",
+    "name": "Coffee",
+    "description": "Napoléon · 650g",
+    "seller": "Marché Adonis",
+    "priceCents": 2699,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/062/259/465/0012/front_en.3.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/304962",
+    "checkedAt": "2026-08-08"
+  },
+  {
+    "id": "op-304961",
+    "provider": "open-prices",
+    "name": "Krave",
+    "description": "Kellogg's",
+    "seller": "Marché Adonis",
+    "priceCents": 399,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/005/972/410/1548/front_fr.26.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/304961",
+    "checkedAt": "2026-08-08"
+  },
+  {
+    "id": "op-304958",
+    "provider": "open-prices",
+    "name": "California premium white seedless grapes",
+    "description": "Yummy crunch",
+    "seller": "Marché Adonis",
+    "priceCents": 1029,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/008/347/704/4982/front_en.3.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/304958",
+    "checkedAt": "2026-08-08"
+  },
+  {
+    "id": "op-304960",
+    "provider": "open-prices",
+    "name": "grisbi citron",
+    "description": "Produit vendu au Canada",
+    "seller": "Marché Adonis",
+    "priceCents": 469,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/070/175/068/8356/front_en.3.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/304960",
+    "checkedAt": "2026-08-08"
+  },
+  {
+    "id": "op-303959",
+    "provider": "open-prices",
+    "name": "Cacciatorini sticks",
+    "description": "Italia Salami Co. · 175g",
+    "seller": "Mediterranean Market",
+    "priceCents": 819,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/069/749/210/0518/front_en.17.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/303959",
+    "checkedAt": "2026-08-03"
+  },
+  {
+    "id": "op-276116",
+    "provider": "open-prices",
+    "name": "Plant Based Butter Chicken Meal & Basmati Rice",
+    "description": "Bowlful · 350 g",
+    "seller": "Dollarama",
+    "priceCents": 350,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/066/788/860/1004/front_en.24.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/276116",
+    "checkedAt": "2026-05-12"
+  },
+  {
+    "id": "op-271208",
+    "provider": "open-prices",
+    "name": "The Big 16",
+    "description": "Silver Hills · 615 g",
+    "seller": "Real Canadian Superstore",
+    "priceCents": 579,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/005/599/104/0160/front_en.198.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/271208",
+    "checkedAt": "2026-05-03"
+  },
+  {
+    "id": "op-266445",
+    "provider": "open-prices",
+    "name": "Pie Blueberry",
+    "description": "Irresistible, Metro",
+    "seller": "Metro",
+    "priceCents": 999,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/005/974/995/7878/front_en.10.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/266445",
+    "checkedAt": "2026-04-15"
+  },
+  {
+    "id": "op-263669",
+    "provider": "open-prices",
+    "name": "Patate dejeuner",
+    "description": "Cavendish",
+    "seller": "Super C",
+    "priceCents": 1200,
+    "currency": "CAD",
+    "images": [
+      "https://images.openfoodfacts.org/images/products/005/621/037/2000/front_fr.3.400.jpg"
+    ],
+    "rating": null,
+    "reviewCount": 0,
+    "source": "https://prices.openfoodfacts.org/prices/263669",
+    "checkedAt": "2026-04-10"
+  }
+]

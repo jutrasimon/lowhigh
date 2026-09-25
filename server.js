@@ -3,14 +3,16 @@ import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Game} from './game.js';
 const products=JSON.parse(await readFile(new URL('./data/products.json',import.meta.url),'utf8'));
-export function createServer(game=new Game(products)) {
+let liveProducts=[];
+try{liveProducts=JSON.parse(await readFile(new URL('./data/open-prices.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+export function createServer(game=new Game([...products,...liveProducts])) {
   const limits=new Map();
   const server=http.createServer(async(req,res)=>{
     const send=(status,body)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
     try {
       const url=new URL(req.url,'http://localhost');
       res.setHeader('X-Content-Type-Options','nosniff'); res.setHeader('Referrer-Policy','no-referrer');
-      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com https://images.openfoodfacts.org; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
       if(url.pathname==='/health')return send(200,{ok:true});
       if(url.pathname.startsWith('/api/')) {
         if(req.method!=='GET' && req.method!=='POST')return send(405,{error:'Méthode non permise.'});

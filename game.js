@@ -94,7 +94,7 @@ export class Game {
     return {code:r.code,phase:r.phase,me:p.id,host:r.host,round:r.round,total:r.deck.length||Math.min(5,this.products.length),deadline:r.deadline,serverTime:this.now(),
       players:r.players.map(x=>({id:x.id,name:x.name,score:x.score,online:this.now()-x.seen<15000,answered:Object.hasOwn(r.answers,x.id)})),
       myGuess:r.answers[p.id]??null,
-      product:product?{id:product.id,name:product.name,seller:product.seller,description:product.description,images:product.images,rating:product.rating,reviewCount:product.reviewCount,video:product.video||null}:null,
+      product:product?{id:product.id,name:product.name,seller:product.seller,description:product.description,images:product.images,rating:product.rating,reviewCount:product.reviewCount,video:product.video||null,provider:product.provider||null}:null,
       ...(['reveal','finished'].includes(r.phase)&&product?{priceCents:product.priceCents,source:product.source,checkedAt:product.checkedAt,results:r.results}:{} )};
   }
   state(code,token){const [r,p]=this.auth(code,token);return this.view(r,p);}

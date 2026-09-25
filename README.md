@@ -4,11 +4,15 @@ La démo autonome se trouve dans `demo/index.html`. GitHub Pages publie uniqueme
 
 # Low Ball / High Ball
 
-Un jeu de prix multijoueur, navigateur, mobile d’abord. Prototype pour jouer entre amis.
+Un jeu de prix multijoueur, navigateur, mobile d’abord. Prototype pour jouer entre amis : https://lowhigh-multiplayer.onrender.com.
 
 **Ce dépôt est l’unique source du projet : code, catalogue, documentation et tests. Aucun projet ChatGPT Sites.**
 
-## Tester entre amis sur GitHub
+## Jouer entre amis
+
+Ouvrir https://lowhigh-multiplayer.onrender.com, créer un salon et partager le lien. Le serveur Render Free peut prendre un moment à se réveiller. Salons temporaires en mémoire : un redémarrage du service efface les parties en cours.
+
+## Lancer localement ou avec Codespaces
 
 1. Dans ce dépôt, cliquer **Code → Codespaces → Create codespace on main**.
 2. Le serveur démarre automatiquement sur le port **3000**. Sinon : `npm start` dans le terminal.
@@ -16,7 +20,7 @@ Un jeu de prix multijoueur, navigateur, mobile d’abord. Prototype pour jouer e
 4. Ouvrir l’adresse transférée du port 3000. Créer un salon et partager l’invitation.
 5. Garder le Codespace actif pendant la partie; l’arrêter après le test. Codespaces utilise le quota de ton compte et peut être facturé au-delà. La configuration ne crée aucun Codespace automatiquement.
 
-Le code seul ne constitue pas un serveur en ligne. **GitHub Pages ne peut pas exécuter ce serveur Node.** La V1 utilise Codespaces pour les tests; aucun hébergeur externe n’est créé.
+GitHub Pages héberge la démo avec bots; Render héberge le vrai multijoueur.
 
 Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts séparément (pas « dupliquer l’onglet », qui peut copier la session) ou une fenêtre privée. Pour une soirée sur le réseau local : `npm start`, puis accéder à `http://ADRESSE_IP_DE_L_ORDINATEUR:3000` sur chaque téléphone.
 
@@ -34,7 +38,15 @@ Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts sépar�
 
 ## Catalogue
 
-`data/products.json` contient cinq produits réels IKEA Canada : requin BLÅHAJ 100 cm, tasse IKEA 365+ 36 cl, fauteuil POÄNG bouleau/Knisa beige clair, lampe TERTIAL gris foncé et cuisine DUKTIG bouleau.
+`data/products.json` contient cinq produits IKEA Canada du catalogue initial. `data/open-prices.json` contient les relevés de prix canadiens d’[Open Prices](https://prices.openfoodfacts.org/), une base collaborative d’Open Food Facts. Le jeu mélange les deux sources à chaque partie. Les prix Open Prices sont des relevés datés chez un magasin précis, pas des prix garantis au moment où l’on joue.
+
+### Actualiser les produits
+
+Dans GitHub, ouvrir **Actions → Actualiser les produits → Run workflow** sur `main`. La commande récupère les derniers relevés en CAD, conserve les produits canadiens avec nom, photo et date des six derniers mois, puis publie `data/open-prices.json` si le catalogue change. Render redéploie automatiquement le commit. **Lancer entre deux parties**, car un redéploiement efface les salons actifs sur l’offre gratuite. Si la source échoue ou fournit moins de cinq produits, l’ancien catalogue est conservé.
+
+En local : `npm run update:products`. Aucun compte ni clé API requis. La commande est manuelle; aucune mise à jour périodique n’est programmée.
+
+Les prix et informations Open Prices sont attribués dans le jeu et publiés séparément sous [ODbL](https://opendatacommons.org/licenses/odbl/1-0/). Les photos sont servies par Open Food Facts et créditées dans le jeu. Le vendeur, la date et le lien du relevé apparaissent à la révélation.
 
 Prix, notes et photos proviennent des fiches officielles référencées dans chaque entrée, consultées le **21 septembre 2026**. Les prix sont des instantanés de jeu, pas des prix en direct. Les descriptions françaises sont reformulées. Les notes agrégées sont affichées, pas des avis inventés. Trois photos par produit sont chargées depuis IKEA; leur disponibilité dépend du marchand. La source et le prix sont dévoilés après la manche.
 
@@ -49,7 +61,8 @@ Node 22+, sans dépendance. HTML/CSS/JS natifs. Pas de base de données ni de cl
 - `server.js` : HTTP, fichiers publics explicitement autorisés, API JSON, limites de requêtes.
 - `game.js` : machine à états, identité, scores, droits de l’hôte et expiration.
 - `public/` : interface, saisie mobile, galerie, sons activables, vibrations disponibles et confettis respectant la réduction des animations.
-- `data/products.json` : catalogue privé côté serveur.
+- `data/products.json` et `data/open-prices.json` : catalogues côté serveur; les prix ne sont pas envoyés avant la révélation.
+- `scripts/update-products.js` : filtre et renouvelle les relevés Open Prices.
 - `test/game.test.js` : tests métier et intégration HTTP multijoueur.
 - `.github/workflows/tests.yml` : vérifications à chaque push/PR et à la demande dans Actions.
 - `.devcontainer/devcontainer.json` : lancement du playtest Codespaces.

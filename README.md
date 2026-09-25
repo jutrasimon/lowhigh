@@ -1,6 +1,6 @@
 # Tester la démo avec bots
 
-La démo autonome se trouve dans `demo/index.html`. GitHub Pages publie uniquement ce dossier. Les produits de cette démo sont fixes; le chargement de produits live n’est pas encore branché.
+La démo autonome avec bots se trouve dans `demo/index.html`. GitHub Pages publie uniquement ce dossier. Elle illustre le jeu d’estimation initial avec des produits fixes. Les quatre modes et les banques datées sont dans la version multijoueur Render.
 
 # Low Ball / High Ball
 
@@ -24,37 +24,36 @@ GitHub Pages héberge la démo avec bots; Render héberge le vrai multijoueur.
 
 Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts séparément (pas « dupliquer l’onglet », qui peut copier la session) ou une fenêtre privée. Pour une soirée sur le réseau local : `npm start`, puis accéder à `http://ADRESSE_IP_DE_L_ORDINATEUR:3000` sur chaque téléphone.
 
-## Règles V1
+## Modes de jeu
 
-- 2 à 8 joueurs, pseudonyme sans compte, salon à code de 5 caractères.
-- 5 produits mélangés sans répétition dans une partie; 45 secondes par manche.
-- Chaque personne verrouille un prix; les autres estimations restent cachées jusqu’à la révélation.
-- Révélation lorsque tous ont répondu ou lorsque le délai expire.
-- Dollars canadiens, **avant taxes et livraison**, variante exacte décrite sur la fiche.
-- Précision : `max(0, arrondi(100 × (1 − écart absolu / prix réel)))`.
-- Bonus de **50** au plus proche. En cas d’égalité, chaque joueur à égalité reçoit le bonus.
-- Aucune réponse = 0 point, aucun bonus. Dépasser le prix est permis et pénalisé comme une sous-estimation équivalente.
-- L’hôte passe au produit suivant. Classement final, égalité possible, revanche avec scores remis à zéro.
+L’hôte choisit le mode dans le salon, et peut en changer après une partie. De 2 à 8 joueurs, cinq manches de 45 secondes. Le prix ou la valeur de référence reste côté serveur jusqu’au moment prévu par le mode.
 
-## Catalogue
+| Mode | Questions | Réponse et résultat |
+| --- | --- | --- |
+| Vrai prix | Produits courants de détaillants canadiens, dont l’épicerie | Prix affiché en CAD. Score `max(0, arrondi(100 × (1 − écart absolu / prix)))`, plus 50 au plus proche. Égalité : chacun reçoit le bonus. |
+| Expert | Objets rares et de collection issus de ventes terminées | Estimation du prix réalisé en USD, mêmes points. |
+| Enchères | Objets de collection | Chacun reçoit 25 000 $ US. Mises secrètes simultanées, limitées à l’argent restant. La mise positive la plus haute gagne et est payée; une égalité au premier rang est départagée au hasard. Une manche sans mise positive reste invendue. La valeur réalisée reste secrète pendant les manches. À la fin : fortune = argent restant + valeurs réalisées de tous les objets remportés. |
+| Historique | Moyennes mensuelles nationales de Statistique Canada | Estimer en CAD un produit de septembre 1995, 2000, 2010 ou 2020. L’hôte choisit une année ou un mélange. Mêmes points que le vrai prix. |
 
-`data/products.json` contient cinq produits IKEA Canada du catalogue initial. `data/open-prices.json` contient les relevés de prix canadiens d’[Open Prices](https://prices.openfoodfacts.org/), une base collaborative d’Open Food Facts. Le jeu mélange les deux sources à chaque partie. Les prix Open Prices sont des relevés datés chez un magasin précis, pas des prix garantis au moment où l’on joue.
+Dans les modes d’estimation, aucune réponse rapporte 0. Une réponse exacte rapporte 100 points, plus 50 si elle est au plus proche. Le vendeur ou la provenance du prix apparaît dans la question; date et lien de source apparaissent après la réponse. Les enchères montrent les mises et l’acquéreur après chaque manche, puis les vrais prix et sources à la fin.
 
-### Actualiser les produits
+## Catalogue et photos
 
-Dans un salon, **l’hôte clique « Actualiser les produits » avant de démarrer**. Le serveur récupère les relevés et les prochains salons utilisent aussitôt le catalogue renouvelé, sans interrompre une manche déjà commencée. Limite : une actualisation toutes les 15 minutes pour l’ensemble du serveur. Si la source est indisponible, le catalogue actuel reste en place. Les changements faits par ce bouton restent en mémoire jusqu’au prochain redémarrage.
+Les données sont des **instantanés datés**, pas des demandes en direct à chaque question. Les prix sont conservés sur le serveur et les images sont servies à partir des URL de leurs sources. Chaque entrée indique son type de prix, sa devise, sa date et son lien de vérification.
 
-Pour conserver un instantané après les redémarrages, ouvrir **Actions → Actualiser les produits → Run workflow** sur `main` dans GitHub. La commande récupère les derniers relevés en CAD, conserve les produits canadiens avec nom, photo et date des six derniers mois, puis publie `data/open-prices.json` si le catalogue change. Si Render détecte le commit et redéploie, les salons en cours sont effacés : lancer cette action entre deux parties.
+- `data/products.json` : cinq articles IKEA Canada avec trois photos par produit.
+- `data/open-prices.json` : relevés canadiens d’[Open Prices](https://prices.openfoodfacts.org/) (ODbL), avec magasin et photo d’Open Food Facts.
+- `data/grocery.json` : échantillon manuel de vingt catégories d’[épiceries.ca](https://www.epiceries.ca/), avec magasin, lien marchand, date et photo. Le prix affiché peut être promotionnel; la variante et l’unité doivent correspondre à la fiche. Données issues d’un agrégateur, sujettes à ses conditions.
+- `data/collectibles.json` : quinze lots vendus par [Christie’s](https://www.christies.com/), objets physiques de plusieurs catégories. Le prix réalisé en USD est la référence ludique, sans simulation des frais, taxes ou coûts de transport. Une à trois photos du lot quand elles figurent sur la fiche.
+- `data/history.json` : 40 prix moyens mensuels canadiens en septembre, dérivés de la [table 18-10-0002-01 de Statistique Canada](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201). Les images sont des illustrations actuelles, clairement marquées, et ne montrent pas un produit de l’époque. Les moyennes nationales ne représentent pas un prix du Québec ni un magasin précis.
 
-En local : `npm run update:products`. Aucun compte ni clé API requis. La commande est manuelle; aucune mise à jour périodique n’est programmée.
+### Actualiser les instantanés
 
-Les prix et informations Open Prices sont attribués dans le jeu et publiés séparément sous [ODbL](https://opendatacommons.org/licenses/odbl/1-0/). Les photos sont servies par Open Food Facts et créditées dans le jeu. Le vendeur est visible pendant la manche; la date et le lien du relevé apparaissent à la révélation.
+`npm run update:grocery` interroge l’API publique épiceries.ca et reconstruit manuellement l’instantané avec des produits récents et photographiés. `npm run update:collectibles` revérifie les lots Christie’s présélectionnés et leurs photos. `npm run update:history` régénère les moyennes depuis le CSV officiel de Statistique Canada. Ces scripts ne sont **pas planifiés**. Un changement de source ou d’URL peut nécessiter une révision humaine; aucune clé payante n’est requise.
 
-Prix, notes et photos proviennent des fiches officielles référencées dans chaque entrée, consultées le **21 septembre 2026**. Les prix sont des instantanés de jeu, pas des prix en direct. Les descriptions françaises sont reformulées. Les notes agrégées sont affichées, pas des avis inventés. Trois photos par produit sont chargées depuis IKEA; leur disponibilité dépend du marchand. La source et le prix sont dévoilés après la manche.
+L’hôte peut aussi cliquer **Actualiser les produits du quotidien** dans le salon : cela récupère les relevés récents d’Open Prices, sans changer les autres banques. Limite globale de 15 minutes. Les parties en cours gardent leur sélection. L’actualisation faite dans le jeu est en mémoire seulement. Pour conserver les relevés Open Prices après redémarrage : `npm run update:products` ou **Actions → Actualiser les produits** sur GitHub, puis déployer le nouveau commit.
 
-Champ `video` optionnel pris en charge (URL HTTPS directe IKEA, controls/playsinline), mais aucun clip n’est inclus dans ce premier catalogue. Les photos appartiennent au marchand; le prototype n’est ni affilié ni commandité par IKEA. Prévoir des médias autorisés avant une diffusion commerciale.
-
-Pour ajouter un produit : identifiant unique, nom, description de la variante, `priceCents` entier positif, `currency: CAD`, tableau `images`, note et nombre d’avis facultatifs, URL `source`, date `checkedAt`. Ne pas placer le catalogue dans `public/` : les prix doivent rester côté serveur. Le petit catalogue sera connu après une partie; élargir avant des tests répétés.
+Les photos restent hébergées par les fournisseurs et peuvent cesser de fonctionner. Les photos et fiches Christie’s, IKEA et des marchands appartiennent à leurs titulaires; ce prototype n’est affilié à aucun d’eux. Vérifier les droits média et les conditions des données avant une diffusion commerciale. Ne jamais placer les fichiers `data/` dans `public/`, car ils contiennent les réponses.
 
 ## Architecture
 
@@ -63,13 +62,13 @@ Node 22+, sans dépendance. HTML/CSS/JS natifs. Pas de base de données ni de cl
 - `server.js` : HTTP, fichiers publics explicitement autorisés, API JSON, limites de requêtes.
 - `game.js` : machine à états, identité, scores, droits de l’hôte et expiration.
 - `public/` : interface, saisie mobile, galerie, sons activables, vibrations disponibles et confettis respectant la réduction des animations.
-- `data/products.json` et `data/open-prices.json` : catalogues côté serveur; les prix ne sont pas envoyés avant la révélation.
-- `scripts/update-products.js` : filtre et renouvelle les relevés Open Prices.
+- `data/*.json` : catalogues côté serveur; les prix ne sont pas envoyés avant la révélation prévue.
+- `scripts/` : mise à jour manuelle des instantanés avec validation des sources.
 - `test/game.test.js` : tests métier et intégration HTTP multijoueur.
 - `.github/workflows/tests.yml` : vérifications à chaque push/PR et à la demande dans Actions.
 - `.devcontainer/devcontainer.json` : lancement du playtest Codespaces.
 
-Les clients interrogent le serveur une fois par seconde. Chronomètre et points sont calculés côté serveur. L’API ne transmet ni le prix ni les réponses des autres avant révélation. Jeton joueur aléatoire en `sessionStorage`, envoyé par en-tête Authorization, jamais dans le lien d’invitation. Un rafraîchissement du même onglet reprend la session. La fermeture de l’onglet peut perdre cette session.
+Les clients interrogent le serveur une fois par seconde. Chronomètre, points, mises et fortune sont calculés côté serveur. L’API ne transmet ni le prix ni les réponses des autres avant leur révélation. Jeton joueur aléatoire en `sessionStorage`, envoyé par en-tête Authorization, jamais dans le lien d’invitation. Un rafraîchissement du même onglet reprend la session. La fermeture de l’onglet peut perdre cette session.
 
 Un salon est supprimé après 2 h sans activité; un redémarrage supprime tous les salons. L’hôte peut quitter explicitement et passe la main au prochain joueur. Après 60 s sans nouvelles de l’hôte, le prochain joueur actif prend le relais. Les joueurs absents restent dans la partie jusqu’à leur départ explicite; leur manche expire avec 0 point. Nouvelle arrivée seulement au lobby.
 

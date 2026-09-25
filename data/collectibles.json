@@ -1,0 +1,373 @@
+[
+  {
+    "id": "christies-1",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Météorite Campo del Cielo percée naturellement",
+    "category": "Météorites",
+    "description": "Spécimen de fer de 971 g, avec trou naturel et socle.",
+    "priceCents": 482600,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2025-12-12",
+    "source": "https://onlineonly.christies.com/s/skybreakers-between-heaven-earth/campo-del-cielo-meteorite-natural-hole-7/283136",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_24589_0007_000(campo_del_cielo_meteorite_8212_with_a_natural_hole123033).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/skybreakers-between-heaven-earth/campo-del-cielo-meteorite-natural-hole-7/283136"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-2",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Fender Telecaster B-Bender 2023",
+    "category": "Musique",
+    "description": "Guitare électrique Fender American Professional II avec mécanisme B-Bender.",
+    "priceCents": 190500,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2026-03-17",
+    "source": "https://onlineonly.christies.com/s/jim-irsay-collection-online/fender-musical-instrument-corp-corona-california-2023-453/288986",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2026/NYR/2026_NYR_24631_0453_000(fender_musical_instrument_corp_corona_california_2023_a_solid-body_ele104032).jpg",
+      "https://www.christies.com/img/LotImages/2026/NYR/2026_NYR_24631_0453_001(fender_musical_instrument_corp_corona_california_2023_a_solid-body_ele045130).jpg",
+      "https://www.christies.com/img/LotImages/2026/NYR/2026_NYR_24631_0453_002(fender_musical_instrument_corp_corona_california_2023_a_solid-body_ele045135).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/jim-irsay-collection-online/fender-musical-instrument-corp-corona-california-2023-453/288986"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-3",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Fender Stratocaster Custom Shop 2004",
+    "category": "Musique",
+    "description": "Édition 50e anniversaire de la Stratocaster.",
+    "priceCents": 571500,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2026-03-17",
+    "source": "https://onlineonly.christies.com/s/jim-irsay-collection-online/fender-musical-instrument-corp-corona-california-2004-448/288980",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2026/NYR/2026_NYR_24631_0448_000(fender_musical_instrument_corp_corona_ca_2004_a_solidbody_electric_gui_d6573312104006).jpg",
+      "https://www.christies.com/img/LotImages/2026/NYR/2026_NYR_24631_0448_001(fender_musical_instrument_corp_corona_ca_2004_a_solidbody_electric_gui_d6573312045001).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/jim-irsay-collection-online/fender-musical-instrument-corp-corona-california-2004-448/288980"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-4",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Patek Philippe Gondolo en or 18 carats",
+    "category": "Montres",
+    "description": "Montre bracelet rectangulaire à quartz, référence 4824/1.",
+    "priceCents": 882000,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-06-09",
+    "source": "https://onlineonly.christies.com/s/watches-online/patek-philippe-ref-4824-1-gondolo-18k-yellow-gold-rectangular-shaped-259/187464",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_22017_0259_000(patek_philippe_ref_4824_1_gondolo_an_18k_yellow_gold_rectangular-shape055314).jpg",
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_22017_0259_001(patek_philippe_ref_4824_1_gondolo_an_18k_yellow_gold_rectangular-shape055322).jpg",
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_22017_0259_002(patek_philippe_ref_4824_1_gondolo_an_18k_yellow_gold_rectangular-shape055333).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/watches-online/patek-philippe-ref-4824-1-gondolo-18k-yellow-gold-rectangular-shaped-259/187464"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-5",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Tranche de météorite Allende",
+    "category": "Météorites",
+    "description": "Tranche complète de la chondrite carbonée Allende.",
+    "priceCents": 529200,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-03-28",
+    "source": "https://onlineonly.christies.com/s/deep-impact-lunar-martian-other-rare-meteorites/allende-complete-slice-oldest-matter-mankind-can-touch-36/177184",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_22087_0036_000(allende_complete_slice_8212_oldest_matter_mankind_can_touch_carbonaceo112655).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/deep-impact-lunar-martian-other-rare-meteorites/allende-complete-slice-oldest-matter-mankind-can-touch-36/177184"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-6",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Tranche de météorite Dhofar 1989",
+    "category": "Météorites",
+    "description": "Tranche complète de météorite uréilite trouvée à Oman.",
+    "priceCents": 226800,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-03-28",
+    "source": "https://onlineonly.christies.com/s/deep-impact-lunar-martian-other-rare-meteorites/diamonds-outer-space-complete-slice-dhofar-1989-63/177211",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_22087_0063_000(diamonds_from_outer_space_8212_complete_slice_of_dhofar_1989_ureilite113123).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/deep-impact-lunar-martian-other-rare-meteorites/diamonds-outer-space-complete-slice-dhofar-1989-63/177211"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-7",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Météorite Canyon Diablo",
+    "category": "Météorites",
+    "description": "Fragment de fer météoritique montrant l’intérieur et l’extérieur.",
+    "priceCents": 378000,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2022-02-23",
+    "source": "https://onlineonly.christies.com/s/deep-impact-martian-lunar-other-rare-meteorites/canyon-diablo-meteorite-interior-exterior-revealed-end-piece-19/142792",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2022/NYR/2022_NYR_20593_0019_001(canyon_diablo_meteorite_interior_and_exterior_revealed_in_end_piece_ir_d6358792113143).jpg",
+      "https://www.christies.com/img/LotImages/2022/NYR/2022_NYR_20593_0019_000(canyon_diablo_meteorite_interior_and_exterior_revealed_in_end_piece_ir_d6358792113143).jpg",
+      "https://www.christies.com/img/LotImages/2022/NYR/2022_NYR_20593_0019_002(canyon_diablo_meteorite_interior_and_exterior_revealed_in_end_piece_ir_d6358792113143).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/deep-impact-martian-lunar-other-rare-meteorites/canyon-diablo-meteorite-interior-exterior-revealed-end-piece-19/142792"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-8",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Météorite Dronino sculpturale",
+    "category": "Météorites",
+    "description": "Météorite ferreuse à forme de sculpture de table.",
+    "priceCents": 937500,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2018-02-14",
+    "source": "https://onlineonly.christies.com/s/deep-impact-martian-lunar-other-rare-meteorites/dronino-meteorite-natural-tabletop-sculpture-outer-space-5/52959",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_16596_0005_000(dronino_meteorite_natural_tabletop_sculpture_from_outer_space_iron_ata031115).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/deep-impact-martian-lunar-other-rare-meteorites/dronino-meteorite-natural-tabletop-sculpture-outer-space-5/52959"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-9",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "What Makes Sammy Run? première édition signée",
+    "category": "Livres",
+    "description": "Roman de Budd Schulberg de 1941, dédicacé à Paul Bartel.",
+    "priceCents": 325000,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2021-09-17",
+    "source": "https://onlineonly.christies.com/s/exceptional-literature-collection-theodore-b-baum-part-two/what-makes-sammy-run-367/126670",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2021/NYR/2021_NYR_20858_0367_000(what_makes_sammy_run_budd_schulberg070919).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/exceptional-literature-collection-theodore-b-baum-part-two/what-makes-sammy-run-367/126670"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-10",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Estampe de Hiroshige : lune à Ryogoku",
+    "category": "Art",
+    "description": "Gravure sur bois japonaise représentant le pont Ryogoku, vers 1831–1832.",
+    "priceCents": 201600,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2024-09-26",
+    "source": "https://onlineonly.christies.com/s/arts-asia-online/utagawa-hiroshige-1797-1858-100/230766",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2024/NYR/2024_NYR_23154_0100_000(utagawa_hiroshige_ryogoku_no_yoizuki023214).jpg",
+      "https://www.christies.com/img/LotImages/2024/NYR/2024_NYR_23154_0100_001(utagawa_hiroshige_ryogoku_no_yoizuki023220).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/arts-asia-online/utagawa-hiroshige-1797-1858-100/230766"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-11",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Programme de la Série mondiale 1924",
+    "category": "Sport",
+    "description": "Programme du match no 3 à New York, avec annotations de pointage.",
+    "priceCents": 37800,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-12-07",
+    "source": "https://onlineonly.christies.com/s/selections-geddy-lee-collection-important-baseball-memorabilia-online/1924-world-series-program-at-new-york-312/202107",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_23032_0312_000(1924_world_series_program113142).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/selections-geddy-lee-collection-important-baseball-memorabilia-online/1924-world-series-program-at-new-york-312/202107"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-12",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Sac Hermès Birkin 35 de 2000",
+    "category": "Mode",
+    "description": "Cuir Clémence gris et bleu, quincaillerie palladium brossé.",
+    "priceCents": 889000,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2025-09-19",
+    "source": "https://onlineonly.christies.com/s/handbags-online-new-york-edit/custom-gris-tourterelle-bleu-arctic-clemence-leather-birkin-35-brushed-101/268858",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_23739_0101_000(a_custom_gris_tourterelle_amp_bleu_arctic_clemence_leather_birkin_35_w122925).jpg",
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_23739_0101_001(a_custom_gris_tourterelle_amp_bleu_arctic_clemence_leather_birkin_35_w122937).jpg",
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_23739_0101_002(a_custom_gris_tourterelle_amp_bleu_arctic_clemence_leather_birkin_35_w122952).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/handbags-online-new-york-edit/custom-gris-tourterelle-bleu-arctic-clemence-leather-birkin-35-brushed-101/268858"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-13",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Balle de baseball signée Waite Hoyt",
+    "category": "Sport",
+    "description": "Balle signée avec attestation PSA/DNA.",
+    "priceCents": 75600,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-12-07",
+    "source": "https://onlineonly.christies.com/s/selections-geddy-lee-collection-important-baseball-memorabilia-online/waite-hoyt-single-signed-baseball-psa-dna-453/202320",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_23032_0453_000(waite_hoyt_single_signed_baseball124645).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/selections-geddy-lee-collection-important-baseball-memorabilia-online/waite-hoyt-single-signed-baseball-psa-dna-453/202320"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-14",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "Flowers from Shakespeare’s Garden et aquarelles",
+    "category": "Livres",
+    "description": "Première édition de 1906 accompagnée de cinq aquarelles originales de Walter Crane.",
+    "priceCents": 201600,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2023-06-15",
+    "source": "https://onlineonly.christies.com/s/ann-gordon-getty-collection-aesthetic-decoration-temple-wings/flowers-shakespeares-garden-279/183128",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2023/NYR/2023_NYR_21107_0279_000(flowers_from_shakespeares_garden_walter_crane_1906114650).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/ann-gordon-getty-collection-aesthetic-decoration-temple-wings/flowers-shakespeares-garden-279/183128"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  },
+  {
+    "id": "christies-15",
+    "modes": [
+      "expert",
+      "auction"
+    ],
+    "name": "The Rising Moon, gravure de Samuel Palmer",
+    "category": "Art",
+    "description": "Eau-forte de 1857 intitulée aussi An English Pastoral.",
+    "priceCents": 138600,
+    "currency": "USD",
+    "priceType": "sold",
+    "seller": "Christie’s",
+    "checkedAt": "2025-06-12",
+    "source": "https://onlineonly.christies.com/s/maurice-sendak-artist-collector-connoisseur-online/samuel-palmer-1805-1881-108/257306",
+    "provider": "christies",
+    "images": [
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_23979_0108_000(samuel_palmer_the_rising_moon_or_an_english_pastoral080208).jpg",
+      "https://www.christies.com/img/LotImages/2025/NYR/2025_NYR_23979_0108_001(samuel_palmer_the_rising_moon_or_an_english_pastoral080214).jpg"
+    ],
+    "imageSources": [
+      "https://onlineonly.christies.com/s/maurice-sendak-artist-collector-connoisseur-online/samuel-palmer-1805-1881-108/257306"
+    ],
+    "priceNote": "Prix réalisé publié par Christie’s; valeur de référence pour le jeu, frais et conditions de vente selon la fiche."
+  }
+]

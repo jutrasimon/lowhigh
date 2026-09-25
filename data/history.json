@@ -1,0 +1,1042 @@
+[
+  {
+    "id": "statcan-1995-09-5",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Bananes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Bananes, 1 kg.",
+    "priceCents": 122,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20139509001_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=eKCFYIz7Th8l"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-1",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Beurre, 454 g",
+    "category": "Beurre",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Beurre, 454 g.",
+    "priceCents": 286,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/e101e9c4-791d-4a76-b2ee-2dbe9e3153c9.1de04edce6d5a2b3987cc67439ab446f.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=DtnUCVqAQcy6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-8",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Bœuf haché, 1 kg",
+    "category": "Bœuf",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Bœuf haché, 1 kg.",
+    "priceCents": 374,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21615908_enfr_front_v2_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=HS4NJyFUgGuC"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-9",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Café torréfié, 300 g",
+    "category": "Café",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Café torréfié, 300 g.",
+    "priceCents": 391,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16709588418590.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oMdrPliDhxyb"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-6",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Chou, 1 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Chou, 1 kg.",
+    "priceCents": 67,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/692324_KG_ml_primary_na_na_042325_GPHP_VOILA_34249a3cf7dc5e28fcc5aba23bdaba8b8f7cfbb6.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Ez2VWpxDiyYw"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-7",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Céleri, 1 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Céleri, 1 kg.",
+    "priceCents": 113,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/033383653211_7956_VOILA_ec3279cdc2d572343b4e9e1705e6f70514e01de9.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=P2TocCDbpEf6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-0",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Lait homogénéisé, 1 L",
+    "category": "Lait",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Lait homogénéisé, 1 L.",
+    "priceCents": 132,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/f0e0954f-2d16-422f-af63-e6f31f20c56d.5e5cd12d8bfad65785f281f560996b64.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=zLGYUMt7kSDr"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-3",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Pain, 675 g",
+    "category": "Pain",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Pain, 675 g.",
+    "priceCents": 129,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21622951_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BbOCdjLc2u0Q"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-10",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Pommes de terre, 4,54 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Pommes de terre, 4,54 kg.",
+    "priceCents": 246,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/11511577444382.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=g0F7VIfDste2"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-4",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Pommes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Pommes, 1 kg.",
+    "priceCents": 240,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20062405001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=KIydMpa0i1DU"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-1995-09-2",
+    "modes": [
+      "history"
+    ],
+    "year": 1995,
+    "name": "Œufs, une douzaine",
+    "category": "Œufs",
+    "description": "Prix moyen mensuel au Canada, septembre 1995. Format exact : Œufs, une douzaine.",
+    "priceCents": 162,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "1995-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16330690658334.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PVnRfIQhK38G"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-5",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Bananes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Bananes, 1 kg.",
+    "priceCents": 117,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20139509001_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=eKCFYIz7Th8l"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-1",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Beurre, 454 g",
+    "category": "Beurre",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Beurre, 454 g.",
+    "priceCents": 310,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/e101e9c4-791d-4a76-b2ee-2dbe9e3153c9.1de04edce6d5a2b3987cc67439ab446f.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=DtnUCVqAQcy6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-8",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Bœuf haché, 1 kg",
+    "category": "Bœuf",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Bœuf haché, 1 kg.",
+    "priceCents": 445,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21615908_enfr_front_v2_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=HS4NJyFUgGuC"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-9",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Café torréfié, 300 g",
+    "category": "Café",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Café torréfié, 300 g.",
+    "priceCents": 323,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16709588418590.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oMdrPliDhxyb"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-6",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Chou, 1 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Chou, 1 kg.",
+    "priceCents": 76,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/692324_KG_ml_primary_na_na_042325_GPHP_VOILA_34249a3cf7dc5e28fcc5aba23bdaba8b8f7cfbb6.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Ez2VWpxDiyYw"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-7",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Céleri, 1 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Céleri, 1 kg.",
+    "priceCents": 142,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/033383653211_7956_VOILA_ec3279cdc2d572343b4e9e1705e6f70514e01de9.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=P2TocCDbpEf6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-0",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Lait homogénéisé, 1 L",
+    "category": "Lait",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Lait homogénéisé, 1 L.",
+    "priceCents": 149,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/f0e0954f-2d16-422f-af63-e6f31f20c56d.5e5cd12d8bfad65785f281f560996b64.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=zLGYUMt7kSDr"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-3",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Pain, 675 g",
+    "category": "Pain",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Pain, 675 g.",
+    "priceCents": 135,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21622951_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BbOCdjLc2u0Q"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-10",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Pommes de terre, 4,54 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Pommes de terre, 4,54 kg.",
+    "priceCents": 384,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/11511577444382.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=g0F7VIfDste2"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-4",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Pommes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Pommes, 1 kg.",
+    "priceCents": 271,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20062405001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=KIydMpa0i1DU"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2000-09-2",
+    "modes": [
+      "history"
+    ],
+    "year": 2000,
+    "name": "Œufs, une douzaine",
+    "category": "Œufs",
+    "description": "Prix moyen mensuel au Canada, septembre 2000. Format exact : Œufs, une douzaine.",
+    "priceCents": 189,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2000-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16330690658334.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PVnRfIQhK38G"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-5",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Bananes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Bananes, 1 kg.",
+    "priceCents": 157,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20139509001_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=eKCFYIz7Th8l"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-1",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Beurre, 454 g",
+    "category": "Beurre",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Beurre, 454 g.",
+    "priceCents": 420,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/e101e9c4-791d-4a76-b2ee-2dbe9e3153c9.1de04edce6d5a2b3987cc67439ab446f.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=DtnUCVqAQcy6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-8",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Bœuf haché, 1 kg",
+    "category": "Bœuf",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Bœuf haché, 1 kg.",
+    "priceCents": 761,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21615908_enfr_front_v2_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=HS4NJyFUgGuC"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-9",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Café torréfié, 300 g",
+    "category": "Café",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Café torréfié, 300 g.",
+    "priceCents": 489,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16709588418590.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oMdrPliDhxyb"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-7",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Céleri, 1 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Céleri, 1 kg.",
+    "priceCents": 194,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/033383653211_7956_VOILA_ec3279cdc2d572343b4e9e1705e6f70514e01de9.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=P2TocCDbpEf6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-0",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Lait homogénéisé, 1 L",
+    "category": "Lait",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Lait homogénéisé, 1 L.",
+    "priceCents": 225,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/f0e0954f-2d16-422f-af63-e6f31f20c56d.5e5cd12d8bfad65785f281f560996b64.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=zLGYUMt7kSDr"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-3",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Pain, 675 g",
+    "category": "Pain",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Pain, 675 g.",
+    "priceCents": 252,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21622951_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BbOCdjLc2u0Q"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-10",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Pommes de terre, 4,54 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Pommes de terre, 4,54 kg.",
+    "priceCents": 473,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/11511577444382.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=g0F7VIfDste2"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-4",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Pommes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Pommes, 1 kg.",
+    "priceCents": 334,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20062405001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=KIydMpa0i1DU"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2010-09-2",
+    "modes": [
+      "history"
+    ],
+    "year": 2010,
+    "name": "Œufs, une douzaine",
+    "category": "Œufs",
+    "description": "Prix moyen mensuel au Canada, septembre 2010. Format exact : Œufs, une douzaine.",
+    "priceCents": 269,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2010-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16330690658334.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PVnRfIQhK38G"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-5",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Bananes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Bananes, 1 kg.",
+    "priceCents": 157,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20139509001_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=eKCFYIz7Th8l"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-1",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Beurre, 454 g",
+    "category": "Beurre",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Beurre, 454 g.",
+    "priceCents": 537,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/e101e9c4-791d-4a76-b2ee-2dbe9e3153c9.1de04edce6d5a2b3987cc67439ab446f.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=DtnUCVqAQcy6"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-8",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Bœuf haché, 1 kg",
+    "category": "Bœuf",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Bœuf haché, 1 kg.",
+    "priceCents": 1100,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21615908_enfr_front_v2_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=HS4NJyFUgGuC"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-9",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Café torréfié, 300 g",
+    "category": "Café",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Café torréfié, 300 g.",
+    "priceCents": 499,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16709588418590.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oMdrPliDhxyb"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-3",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Pain, 675 g",
+    "category": "Pain",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Pain, 675 g.",
+    "priceCents": 284,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/21622951_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BbOCdjLc2u0Q"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-10",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Pommes de terre, 4,54 kg",
+    "category": "Légumes",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Pommes de terre, 4,54 kg.",
+    "priceCents": 1033,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/11511577444382.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=g0F7VIfDste2"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-4",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Pommes, 1 kg",
+    "category": "Fruits",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Pommes, 1 kg.",
+    "priceCents": 458,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/20062405001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=KIydMpa0i1DU"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  },
+  {
+    "id": "statcan-2020-09-2",
+    "modes": [
+      "history"
+    ],
+    "year": 2020,
+    "name": "Œufs, une douzaine",
+    "category": "Œufs",
+    "description": "Prix moyen mensuel au Canada, septembre 2020. Format exact : Œufs, une douzaine.",
+    "priceCents": 370,
+    "currency": "CAD",
+    "priceType": "national-average",
+    "seller": "Statistique Canada",
+    "checkedAt": "2020-09",
+    "source": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000201",
+    "dataSource": "https://www150.statcan.gc.ca/n1/en/tbl/csv/18100002-eng.zip",
+    "provider": "statcan",
+    "images": [
+      "https://cdn.epiceries.ca/16330690658334.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PVnRfIQhK38G"
+    ],
+    "imageNote": "Photo actuelle illustrative, sans lien avec le prix historique.",
+    "priceNote": "Moyenne mensuelle canadienne non désaisonnalisée; ce n’est pas le prix d’un magasin précis."
+  }
+]

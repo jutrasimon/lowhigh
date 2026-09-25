@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "epi-YqVcdturk61T",
+    "modes": [
+      "real"
+    ],
+    "category": "Légumes",
+    "name": "Tomates rouges en grappes",
+    "description": "PC Biologique · Prix pour 1 kg",
+    "seller": "Maxi",
+    "priceCents": 713,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20127917001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=YqVcdturk61T"
+    ],
+    "source": "https://www.maxi.ca/fr/tomates-rouges-en-grappes/p/20127917001_KG",
+    "providerSource": "https://epiceries.ca/view?i=YqVcdturk61T",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-eWPnNYyhjZsf",
+    "modes": [
+      "real"
+    ],
+    "category": "Légumes",
+    "name": "Bulbe d'ail paquet de 3",
+    "description": "1un",
+    "seller": "Maxi",
+    "priceCents": 449,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/83586200500_enfr_front_centre_marketing_GS1_Ecommerce_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=eWPnNYyhjZsf"
+    ],
+    "source": "https://www.maxi.ca/fr/bulbe-d-ail-paquet-de-3/p/21626133001_EA",
+    "providerSource": "https://epiceries.ca/view?i=eWPnNYyhjZsf",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-P2TocCDbpEf6",
+    "modes": [
+      "real"
+    ],
+    "category": "Légumes",
+    "name": "Céleri emballé 1 un",
+    "description": "1ea",
+    "seller": "IGA",
+    "priceCents": 249,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/033383653211_7956_VOILA_ec3279cdc2d572343b4e9e1705e6f70514e01de9.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=P2TocCDbpEf6"
+    ],
+    "source": "https://www.iga.ca/fr/produits/céleri-emballé-1-un",
+    "providerSource": "https://epiceries.ca/view?i=P2TocCDbpEf6",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-yCgTH3Oq6ZsK",
+    "modes": [
+      "real"
+    ],
+    "category": "Légumes",
+    "name": "Poivron orange de serre 2 un",
+    "description": "1kg",
+    "seller": "IGA",
+    "priceCents": 659,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/8067_KG_ml_primary_front_012825_VOILA_ed519d975d6dfa6451dc98f10de071ecb5d5de07.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=yCgTH3Oq6ZsK"
+    ],
+    "source": "https://www.iga.ca/fr/produits/poivron-orange-de-serre-2-un",
+    "providerSource": "https://epiceries.ca/view?i=yCgTH3Oq6ZsK",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-z0VwTRE4tDn2",
+    "modes": [
+      "real"
+    ],
+    "category": "Fruits",
+    "name": "Pêches",
+    "description": "Fruits · Prix pour 1 kg",
+    "seller": "Provigo",
+    "priceCents": 456,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20002646001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=z0VwTRE4tDn2"
+    ],
+    "source": "https://www.provigo.ca/fr/p-ches/p/20002646001_KG",
+    "providerSource": "https://epiceries.ca/view?i=z0VwTRE4tDn2",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-BXD5jMQPgflu",
+    "modes": [
+      "real"
+    ],
+    "category": "Fruits",
+    "name": "Raisins sans pépins Muscat rose",
+    "description": "le Choix du Président · Prix pour 1 kg",
+    "seller": "Maxi",
+    "priceCents": 1124,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20562311001_fr_front_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BXD5jMQPgflu"
+    ],
+    "source": "https://www.maxi.ca/fr/raisins-sans-p-pins-muscat-rose/p/20562311001_KG",
+    "providerSource": "https://epiceries.ca/view?i=BXD5jMQPgflu",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-mWIzGjYE6C8A",
+    "modes": [
+      "real"
+    ],
+    "category": "Fruits",
+    "name": "Poires bosc",
+    "description": "Délices du Marché · 2l",
+    "seller": "Provigo",
+    "priceCents": 649,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20987653001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=mWIzGjYE6C8A"
+    ],
+    "source": "https://www.provigo.ca/fr/poires-bosc/p/20987653001_EA",
+    "providerSource": "https://epiceries.ca/view?i=mWIzGjYE6C8A",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-KIydMpa0i1DU",
+    "modes": [
+      "real"
+    ],
+    "category": "Fruits",
+    "name": "Pommes Honeycrisp course du verger",
+    "description": "Fruits · Prix pour 1 kg",
+    "seller": "Maxi",
+    "priceCents": 139,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20062405001_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=KIydMpa0i1DU"
+    ],
+    "source": "https://www.maxi.ca/fr/pommes-honeycrisp-course-du-verger/p/20062405001_KG",
+    "providerSource": "https://epiceries.ca/view?i=KIydMpa0i1DU",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-rZUceon1tGiq",
+    "modes": [
+      "real"
+    ],
+    "category": "Lait",
+    "name": "Lactantia PurFiltre Lait 0 % écrémé 1.5 L",
+    "description": "Lactantia · 1500ml",
+    "seller": "IGA",
+    "priceCents": 579,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/904513_EA_ml_primary_front_na_101024_VOILA_7d1a0ba54bb391753eb1242bf2736c2dbd719bb9.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=rZUceon1tGiq"
+    ],
+    "source": "https://www.iga.ca/fr/produits/lactantia-purfiltre-lait-0---écrémé-1.5-l",
+    "providerSource": "https://epiceries.ca/view?i=rZUceon1tGiq",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-CenoX3cNgH7M",
+    "modes": [
+      "real"
+    ],
+    "category": "Lait",
+    "name": "Nido lait entier en poudre",
+    "description": "Nestlé · 800g",
+    "seller": "Metro",
+    "priceCents": 2999,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16360674361374.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=CenoX3cNgH7M"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/bebe/nourriture-et-preparations/preparations/nido-lait-entier-en-poudre/p/055000215954",
+    "providerSource": "https://epiceries.ca/view?i=CenoX3cNgH7M",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-pXnG81fOtrJ7",
+    "modes": [
+      "real"
+    ],
+    "category": "Lait",
+    "name": "Lait de poule riche et crémeux original",
+    "description": "le Choix du Président · 1l",
+    "seller": "Maxi",
+    "priceCents": 425,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21546828_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=pXnG81fOtrJ7"
+    ],
+    "source": "https://www.maxi.ca/fr/lait-de-poule-riche-et-cr-meux-original/p/21546828_EA",
+    "providerSource": "https://epiceries.ca/view?i=pXnG81fOtrJ7",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-QtJBKMezO42R",
+    "modes": [
+      "real"
+    ],
+    "category": "Lait",
+    "name": "Lait de poule",
+    "description": "QUÉBON · 1l",
+    "seller": "Maxi",
+    "priceCents": 355,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/5587207416_fr_front_centre_marketing_GS1_Ecommerce_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=QtJBKMezO42R"
+    ],
+    "source": "https://www.maxi.ca/fr/lait-de-poule/p/20166055_EA",
+    "providerSource": "https://epiceries.ca/view?i=QtJBKMezO42R",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-tT9GyHCgE5ar",
+    "modes": [
+      "real"
+    ],
+    "category": "Œufs",
+    "name": "Lovo Œufs bruns moyen biologiques 12 un",
+    "description": "Lovo · 12ea",
+    "seller": "IGA",
+    "priceCents": 979,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1449222_EA_ml_primary_front_NA_082826_VOILA_e7669c4966adcd836c35d0a046850858f497bd0f.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=tT9GyHCgE5ar"
+    ],
+    "source": "https://www.iga.ca/fr/produits/lovo-œufs-bruns-moyen-biologiques-12-un",
+    "providerSource": "https://epiceries.ca/view?i=tT9GyHCgE5ar",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-3KYrNbVmlHyP",
+    "modes": [
+      "real"
+    ],
+    "category": "Œufs",
+    "name": "OEUFSpresto ! en format collation",
+    "description": "Œufs",
+    "seller": "Walmart",
+    "priceCents": 238,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6000203718888.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=3KYrNbVmlHyP"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/oeufspresto-en-format-collation/6000191284132",
+    "providerSource": "https://epiceries.ca/view?i=3KYrNbVmlHyP",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-PVnRfIQhK38G",
+    "modes": [
+      "real"
+    ],
+    "category": "Œufs",
+    "name": "Extra gros œufs",
+    "description": "Fermes Burnbrae · 12un",
+    "seller": "Metro",
+    "priceCents": 479,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16330690658334.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PVnRfIQhK38G"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/oeufs/oeufs-entiers/extra-gros-oeufs/p/065651000052",
+    "providerSource": "https://epiceries.ca/view?i=PVnRfIQhK38G",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-96BlGdcQmqfW",
+    "modes": [
+      "real"
+    ],
+    "category": "Œufs",
+    "name": "Nutri-Œuf Oeuf blancs style restaurant 12 un",
+    "description": "- · 12ea",
+    "seller": "IGA",
+    "priceCents": 599,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/609256_EA_ml_primary_front_022124_VOILA_067b7ea8f7da07e7a3198f97d9f02044dac7005d.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=96BlGdcQmqfW"
+    ],
+    "source": "https://www.iga.ca/fr/produits/nutri-œuf-oeuf-blancs-style-restaurant-12-un",
+    "providerSource": "https://epiceries.ca/view?i=96BlGdcQmqfW",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-IAoejwb8q7aH",
+    "modes": [
+      "real"
+    ],
+    "category": "Beurre",
+    "name": "BRAR'S MAKHANI BEURRE FOUETTÉ",
+    "description": "500g",
+    "seller": "Walmart",
+    "priceCents": 898,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/c13427f1-6bc1-453e-84e8-74ecc686956e.72e08c909db616a53c782e0e79f8ed98.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=IAoejwb8q7aH"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/BRAR-S-MAKHANI-BEURRE-FOUETT-500G/30YMUJ44JMYO",
+    "providerSource": "https://epiceries.ca/view?i=IAoejwb8q7aH",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-B87IoADm42wr",
+    "modes": [
+      "real"
+    ],
+    "category": "Beurre",
+    "name": "Imperial Margarine Non Hydrogénée",
+    "description": "Beurre",
+    "seller": "Walmart",
+    "priceCents": 898,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/f99dc6bb-9254-49ba-8459-46f296502044.05e1741172029e6a255798a04ff0f9f4.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=B87IoADm42wr"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Imperial-Margarine-Non-Hydrog-n-e/7DYLQ20F4PJD",
+    "providerSource": "https://epiceries.ca/view?i=B87IoADm42wr",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-bSjx7qPKFlaX",
+    "modes": [
+      "real"
+    ],
+    "category": "Beurre",
+    "name": "Becel Beurre végétal avec huile d’olive salé 454 g",
+    "description": "Becel · 454g",
+    "seller": "IGA",
+    "priceCents": 499,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/10389_EA_fr_primary_front_na_080123_VOILA_3a0f1d2d1127f4d2ac6d5810b7284935a26c6cb8.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=bSjx7qPKFlaX"
+    ],
+    "source": "https://www.iga.ca/fr/produits/becel-beurre-végétal-avec-huile-d’olive-salé-454-g",
+    "providerSource": "https://epiceries.ca/view?i=bSjx7qPKFlaX",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-sbUcOeo0Djmg",
+    "modes": [
+      "real"
+    ],
+    "category": "Beurre",
+    "name": "Compliments Margarine 68% huile végétale 1.28 kg",
+    "description": "Compliments · 1280g",
+    "seller": "IGA",
+    "priceCents": 799,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/988461_EA_ml_primary_front_na_042825_VOILA_6c801fec6dfe67013084072faa8c5f0d7400eaef.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=sbUcOeo0Djmg"
+    ],
+    "source": "https://www.iga.ca/fr/produits/compliments-margarine-68--huile-végétale-1.28-kg",
+    "providerSource": "https://epiceries.ca/view?i=sbUcOeo0Djmg",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-AbyGQY1ci6tN",
+    "modes": [
+      "real"
+    ],
+    "category": "Fromage",
+    "name": "Cheddar affiné Tickler",
+    "description": "Castello · Prix pour 1 kg",
+    "seller": "Provigo",
+    "priceCents": 658,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21002831_enfr_front_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=AbyGQY1ci6tN"
+    ],
+    "source": "https://www.provigo.ca/fr/cheddar-affin-tickler/p/21002831_KG",
+    "providerSource": "https://epiceries.ca/view?i=AbyGQY1ci6tN",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-BGNsn0w4LFtb",
+    "modes": [
+      "real"
+    ],
+    "category": "Fromage",
+    "name": "Fromage de chèvre frais à pâte molle aux bleuets",
+    "description": "le Choix du Président · 300g",
+    "seller": "Provigo",
+    "priceCents": 994,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21722641_fr_front_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BGNsn0w4LFtb"
+    ],
+    "source": "https://www.provigo.ca/fr/fromage-de-ch-vre-frais-p-te-molle-aux-bleuets/p/21722641_EA",
+    "providerSource": "https://epiceries.ca/view?i=BGNsn0w4LFtb",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-oikrwnBGced1",
+    "modes": [
+      "real"
+    ],
+    "category": "Fromage",
+    "name": "Fromage Comté vieilli 9 mois",
+    "description": "Jura Flore · 200g",
+    "seller": "Metro",
+    "priceCents": 1599,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17246272061470.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oikrwnBGced1"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/fromages-fins/fromages-a-pate-ferme-et-demi-ferme/fromage-comte-vieilli-9-mois/p/3542860752011",
+    "providerSource": "https://epiceries.ca/view?i=oikrwnBGced1",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-xUtm06RScQwF",
+    "modes": [
+      "real"
+    ],
+    "category": "Fromage",
+    "name": "Fromage cheddar irlandais",
+    "description": "Ireland's Own · 200g",
+    "seller": "Metro",
+    "priceCents": 1549,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/14927221784606.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=xUtm06RScQwF"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/fromages-fins/cheddar/fromage-cheddar-irlandais/p/885676000451",
+    "providerSource": "https://epiceries.ca/view?i=xUtm06RScQwF",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-1sXiNDIBKJtl",
+    "modes": [
+      "real"
+    ],
+    "category": "Yogourt",
+    "name": "Barres mini clio au yogourt grec au caramel salé en enrobage chocolaté",
+    "description": "Yogourt",
+    "seller": "Walmart",
+    "priceCents": 746,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/b8551797-97fb-404e-93d5-cba9555551a5.2570060aaef9d17b28deeebcd68487b7.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=1sXiNDIBKJtl"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Barres-mini-Clio-au-yogourt-grec-au-caramel-sal-en-enrobage-chocolat/6G9FAKF7BBBD",
+    "providerSource": "https://epiceries.ca/view?i=1sXiNDIBKJtl",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-werlDERdBUqS",
+    "modes": [
+      "real"
+    ],
+    "category": "Yogourt",
+    "name": "Barres mini clio au yogourt grec à la framboise en enrobage chocolaté",
+    "description": "Yogourt",
+    "seller": "Walmart",
+    "priceCents": 746,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/10aef832-d7d7-4039-bc03-3177e18a4624.28f7391b0b1bab46e25e7246155b5f82.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=werlDERdBUqS"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Barres-mini-Clio-au-yogourt-grec-la-framboise-en-enrobage-chocolat/5I520LYJR546",
+    "providerSource": "https://epiceries.ca/view?i=werlDERdBUqS",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-5XG8PAo1ec39",
+    "modes": [
+      "real"
+    ],
+    "category": "Yogourt",
+    "name": "Yogourt probiotique 2 %, fraise et bleuet",
+    "description": "le Choix du Président · 100g",
+    "seller": "Maxi",
+    "priceCents": 499,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21750732_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=5XG8PAo1ec39"
+    ],
+    "source": "https://www.maxi.ca/fr/yogourt-probiotique-2-fraise-et-bleuet/p/21750732_EA",
+    "providerSource": "https://epiceries.ca/view?i=5XG8PAo1ec39",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-anFC3RON8EuT",
+    "modes": [
+      "real"
+    ],
+    "category": "Yogourt",
+    "name": "Yogourt grec biologique à la fraise 3.5%",
+    "description": "Olympic · 650g",
+    "seller": "Metro",
+    "priceCents": 799,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17231934291998.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=anFC3RON8EuT"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-laitiers-et-oeufs/yogourts/yogourt-grec-biologique-a-la-fraise-3-5/p/629025413116",
+    "providerSource": "https://epiceries.ca/view?i=anFC3RON8EuT",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-zqHhl3DSOu1T",
+    "modes": [
+      "real"
+    ],
+    "category": "Poulet",
+    "name": "Poulet barbecue acidulé à lananas",
+    "description": "Poulet · Prix pour 1 kg",
+    "seller": "Provigo",
+    "priceCents": 790,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21533487_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=zqHhl3DSOu1T"
+    ],
+    "source": "https://www.provigo.ca/fr/poulet-barbecue-acidul-l-ananas/p/21533487_KG",
+    "providerSource": "https://epiceries.ca/view?i=zqHhl3DSOu1T",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-HoLXuzDBl4tA",
+    "modes": [
+      "real"
+    ],
+    "category": "Poulet",
+    "name": "Jeune dindon assaisonné",
+    "description": "Flamingo · 1un",
+    "seller": "Metro",
+    "priceCents": 3294,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/12972039798814.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=HoLXuzDBl4tA"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-surgeles/viandes-et-volailles/jeune-dindon-assaisonne/p/246472",
+    "providerSource": "https://epiceries.ca/view?i=HoLXuzDBl4tA",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-51WQYUm7nE9F",
+    "modes": [
+      "real"
+    ],
+    "category": "Poulet",
+    "name": "Burgers de poulet watson ridge  de hamburger au poulet fc watson ridge",
+    "description": "800g",
+    "seller": "Walmart",
+    "priceCents": 697,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/4fa5a5db-fc86-4b5e-9067-8c1afc8b29c7.29e3bbf09c5302319b3d12c874d66eb6.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=51WQYUm7nE9F"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Burgers-de-poulet-Watson-Ridge-800-g-de-hamburger-au-poulet-FC-Watson-Ridge/59QA02DT3QL5",
+    "providerSource": "https://epiceries.ca/view?i=51WQYUm7nE9F",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-JqHLNi5AXVsw",
+    "modes": [
+      "real"
+    ],
+    "category": "Poulet",
+    "name": "Poulet farci à la bruschetta",
+    "description": "175g",
+    "seller": "Provigo",
+    "priceCents": 600,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20833481_fr_front_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=JqHLNi5AXVsw"
+    ],
+    "source": "https://www.provigo.ca/fr/poulet-farci-la-bruschetta/p/20833481_EA",
+    "providerSource": "https://epiceries.ca/view?i=JqHLNi5AXVsw",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-Y532BedFbfq8",
+    "modes": [
+      "real"
+    ],
+    "category": "Bœuf",
+    "name": "Our promise bifteck de contre-filet. op bifteck de contre-filet. 0.25 -",
+    "description": "0.39kg",
+    "seller": "Walmart",
+    "priceCents": 1619,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6000209758310.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Y532BedFbfq8"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/our-promise-bifteck-de-contre-filet/3M9WM32Q6BS2",
+    "providerSource": "https://epiceries.ca/view?i=Y532BedFbfq8",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-NiUMRGJec6lo",
+    "modes": [
+      "real"
+    ],
+    "category": "Bœuf",
+    "name": "Our promise bifteck de filet. op bifteck de filet. 0.29 -",
+    "description": "0.53kg",
+    "seller": "Walmart",
+    "priceCents": 3135,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6000210095670.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=NiUMRGJec6lo"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/our-promise-bifteck-de-filet/3BZQTAQTQDI8",
+    "providerSource": "https://epiceries.ca/view?i=NiUMRGJec6lo",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-n41FGXJuMkPK",
+    "modes": [
+      "real"
+    ],
+    "category": "Bœuf",
+    "name": "Cubes de bœuf à fondue",
+    "description": "Bœuf · Prix pour 1 kg",
+    "seller": "Maxi",
+    "priceCents": 1597,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/20148989_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=n41FGXJuMkPK"
+    ],
+    "source": "https://www.maxi.ca/fr/cubes-de-b-uf-fondue/p/20148989_KG",
+    "providerSource": "https://epiceries.ca/view?i=n41FGXJuMkPK",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-ClnsS5AVYx0H",
+    "modes": [
+      "real"
+    ],
+    "category": "Bœuf",
+    "name": "Haut de surlonge de boeuf picanha sans culotte",
+    "description": "Marque maison · une barquette contient environ 4 à 6 unités",
+    "seller": "Metro",
+    "priceCents": 3350,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/10203456045086.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=ClnsS5AVYx0H"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/viandes-et-volailles/boeuf-et-veau/coupes-de-bifteck/haut-de-surlonge-de-boeuf-picanha-sans-culotte/p/239526",
+    "providerSource": "https://epiceries.ca/view?i=ClnsS5AVYx0H",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-3np0TfVqAYzZ",
+    "modes": [
+      "real"
+    ],
+    "category": "Poisson",
+    "name": "5pattes de crabe des neiges en grappe, 8oz",
+    "description": "Poisson · Prix pour 1 kg",
+    "seller": "Provigo",
+    "priceCents": 2547,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21159647_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=3np0TfVqAYzZ"
+    ],
+    "source": "https://www.provigo.ca/fr/5-pattes-de-crabe-des-neiges-en-grappe-8-oz/p/21159647_KG",
+    "providerSource": "https://epiceries.ca/view?i=3np0TfVqAYzZ",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-wA1qd27eIjXG",
+    "modes": [
+      "real"
+    ],
+    "category": "Poisson",
+    "name": "Morceaux de saumon",
+    "description": "300g",
+    "seller": "Maxi",
+    "priceCents": 900,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21634474_fr_front_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=wA1qd27eIjXG"
+    ],
+    "source": "https://www.maxi.ca/fr/morceaux-de-saumon/p/21634474_EA",
+    "providerSource": "https://epiceries.ca/view?i=wA1qd27eIjXG",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-Uf7hsOxzKJdq",
+    "modes": [
+      "real"
+    ],
+    "category": "Poisson",
+    "name": "Tentacules de pieuvre cuits décongelés",
+    "description": "Collection Signature du poissonnier · 150g",
+    "seller": "Metro",
+    "priceCents": 1289,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16415623184414.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Uf7hsOxzKJdq"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/poissons-et-fruits-de-mer/poissons-et-fruits-de-mer-surgeles/emballes-et-en-vrac/tentacules-de-pieuvre-cuits-decongeles/p/244396",
+    "providerSource": "https://epiceries.ca/view?i=Uf7hsOxzKJdq",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-sx2Z4EMRn9Ay",
+    "modes": [
+      "real"
+    ],
+    "category": "Poisson",
+    "name": "Huîtres cocktail Beausoleil",
+    "description": "Maison BeauSoleil · 24un",
+    "seller": "Metro",
+    "priceCents": 5299,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/8873281290270.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=sx2Z4EMRn9Ay"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/poissons-et-fruits-de-mer/fruits-de-mer-frais/huitres/huitres-cocktail-beausoleil/p/857370000259",
+    "providerSource": "https://epiceries.ca/view?i=sx2Z4EMRn9Ay",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-69O2Azs0Xrbh",
+    "modes": [
+      "real"
+    ],
+    "category": "Pâtes",
+    "name": "Nouille instantanée à saveur de kimchi",
+    "description": "Nong Shim · 120g",
+    "seller": "Metro",
+    "priceCents": 199,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16848347889694.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=69O2Azs0Xrbh"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/pates-riz-et-feves/nouilles-et-vermicelle/nouille-instantanee-a-saveur-de-kimchi/p/031146058792",
+    "providerSource": "https://epiceries.ca/view?i=69O2Azs0Xrbh",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-4JIhEYN1PfzV",
+    "modes": [
+      "real"
+    ],
+    "category": "Pâtes",
+    "name": "Stefano Faita Pâtes bucatini de semoule de blé 454 g",
+    "description": "Stefano Faita · 454g",
+    "seller": "IGA",
+    "priceCents": 299,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1378237_EA_ml_primary_front_NA_092126_VOILA_6b65ea6a255105e9fc905d12c9f2d279b7c5f5c0.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=4JIhEYN1PfzV"
+    ],
+    "source": "https://www.iga.ca/fr/produits/stefano-faita-pâtes-bucatini-de-semoule-de-blé-454-g",
+    "providerSource": "https://epiceries.ca/view?i=4JIhEYN1PfzV",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-PiguFHhLYyo1",
+    "modes": [
+      "real"
+    ],
+    "category": "Pâtes",
+    "name": "Kim Phat Nouilles soba 300 g",
+    "description": "Kim Phat · 300g",
+    "seller": "IGA",
+    "priceCents": 269,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1303105_EA_ml_primary_front_NA_092126_VOILA_3f1649f6d3d878e52ab7c75c13691dede4396ecb.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=PiguFHhLYyo1"
+    ],
+    "source": "https://www.iga.ca/fr/produits/kim-phat-nouilles-soba-300-g",
+    "providerSource": "https://epiceries.ca/view?i=PiguFHhLYyo1",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-p6rXbwqcUFdT",
+    "modes": [
+      "real"
+    ],
+    "category": "Pâtes",
+    "name": "Nongshim Soupe de nouilles aux pommes de terre",
+    "description": "Pâtes",
+    "seller": "Walmart",
+    "priceCents": 398,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1f320295-f508-4e27-be6f-1d66b44fac9d.70ba984821132a6ec397031eee00d947.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=p6rXbwqcUFdT"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Nongshim-Soupe-de-nouilles-aux-pommes-de-terre/0YYCPAIHWP0G",
+    "providerSource": "https://epiceries.ca/view?i=p6rXbwqcUFdT",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-tDLJSui8MAkE",
+    "modes": [
+      "real"
+    ],
+    "category": "Céréales",
+    "name": "Granola suisse pomme et miel",
+    "description": "Familia · 320g",
+    "seller": "Metro",
+    "priceCents": 679,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/15781903597598.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=tDLJSui8MAkE"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/cereales-tartinades-et-sirops/granola-et-cereales-sante/granola-suisse-pomme-et-miel/p/813730010412",
+    "providerSource": "https://epiceries.ca/view?i=tDLJSui8MAkE",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-1t5PqrifpAuW",
+    "modes": [
+      "real"
+    ],
+    "category": "Céréales",
+    "name": "Kelloggs Elf On The Shelf",
+    "description": "Kellogg’s · 346g",
+    "seller": "Maxi",
+    "priceCents": 600,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21209746_fr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=1t5PqrifpAuW"
+    ],
+    "source": "https://www.maxi.ca/fr/kelloggs-elf-on-the-shelf/p/21209746_EA",
+    "providerSource": "https://epiceries.ca/view?i=1t5PqrifpAuW",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-FyqV2Gzk4Qlg",
+    "modes": [
+      "real"
+    ],
+    "category": "Céréales",
+    "name": "Céréales de grains de riz grillés au four édition des fêtes",
+    "description": "Kellogg’s · 340g",
+    "seller": "Maxi",
+    "priceCents": 600,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6410013593_enfr_front_centre_marketing_A_GS1_Marketing_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=FyqV2Gzk4Qlg"
+    ],
+    "source": "https://www.maxi.ca/fr/c-r-ales-de-grains-de-riz-grill-s-au-four-dition-d/p/21307252_EA",
+    "providerSource": "https://epiceries.ca/view?i=FyqV2Gzk4Qlg",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-QqrYBkInoTwu",
+    "modes": [
+      "real"
+    ],
+    "category": "Céréales",
+    "name": "Lucky charms céréales. jumbo",
+    "description": "Céréales",
+    "seller": "Walmart",
+    "priceCents": 994,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/ea3b56e7-1e26-4963-b362-3ce94ba4cb3e.1109eafccfb6c262ed1991de5a436593.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=QqrYBkInoTwu"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Lucky-Charms-C-r-ales-Jumbo/6000198309595",
+    "providerSource": "https://epiceries.ca/view?i=QqrYBkInoTwu",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-S4QOAh3ys5BT",
+    "modes": [
+      "real"
+    ],
+    "category": "Conserves",
+    "name": "Great value  mélange de fruits confits. fruits en conserve",
+    "description": "Conserves",
+    "seller": "Walmart",
+    "priceCents": 397,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/209d6165-f18a-4db5-af07-274d5d65bcce.7b04a89959f7725d9c8898818966d743.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=S4QOAh3ys5BT"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Great-Value-M-lange-de-fruits-confits-fruits-en-conserve/6000188767801",
+    "providerSource": "https://epiceries.ca/view?i=S4QOAh3ys5BT",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-MS4PRhucZJxD",
+    "modes": [
+      "real"
+    ],
+    "category": "Conserves",
+    "name": "Saumon rose du Pacifique",
+    "description": "Gold Seal · 418g",
+    "seller": "Metro",
+    "priceCents": 929,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/9894818054174.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=MS4PRhucZJxD"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/aliments-en-conserve-et-en-pot/poissons-et-fruits-de-mer/saumon-rose-du-pacifique/p/063816063294",
+    "providerSource": "https://epiceries.ca/view?i=MS4PRhucZJxD",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-rPIc7nDCV52a",
+    "modes": [
+      "real"
+    ],
+    "category": "Conserves",
+    "name": "Foie de morue dans son huile",
+    "description": "Tousain · 115g",
+    "seller": "Metro",
+    "priceCents": 899,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/8901368905758.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=rPIc7nDCV52a"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/aliments-en-conserve-et-en-pot/poissons-et-fruits-de-mer/foie-de-morue-dans-son-huile/p/060897022851",
+    "providerSource": "https://epiceries.ca/view?i=rPIc7nDCV52a",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-CXloAwkme2BD",
+    "modes": [
+      "real"
+    ],
+    "category": "Conserves",
+    "name": "Sardo Poivrons rôtis sur feu 198 ml",
+    "description": "Sardo · 198ml",
+    "seller": "IGA",
+    "priceCents": 279,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/626702_EA_ml_Primary_Front_NA_VOILA_7647a9f2c143225a0f6682d54f9cb02999e7ab57.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=CXloAwkme2BD"
+    ],
+    "source": "https://www.iga.ca/fr/produits/sardo-poivrons-rôtis-sur-feu-198-ml",
+    "providerSource": "https://epiceries.ca/view?i=CXloAwkme2BD",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-Il5MpDh8ic2N",
+    "modes": [
+      "real"
+    ],
+    "category": "Tartinades",
+    "name": "Tartinade de bleuets",
+    "description": "Première Moisson · 270ml",
+    "seller": "Metro",
+    "priceCents": 699,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17089589837854.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Il5MpDh8ic2N"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/cereales-tartinades-et-sirops/confitures-et-gelees/tartinade-de-bleuets/p/029145683961",
+    "providerSource": "https://epiceries.ca/view?i=Il5MpDh8ic2N",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-cTaIPQjNegUE",
+    "modes": [
+      "real"
+    ],
+    "category": "Tartinades",
+    "name": "Sirop simple pour boisson alcoolisée",
+    "description": "Stirrings · 355ml",
+    "seller": "Metro",
+    "priceCents": 1079,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/11169541685278.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=cTaIPQjNegUE"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/boissons/melanges-pour-boissons/melanges-liquides-pour-boissons/sirop-simple-pour-boisson-alcoolisee/p/780999000945",
+    "providerSource": "https://epiceries.ca/view?i=cTaIPQjNegUE",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-1jny3fx7d089",
+    "modes": [
+      "real"
+    ],
+    "category": "Tartinades",
+    "name": "Compliments Tartinade au beurre aux pois chiches 380 g",
+    "description": "Compliments · 380g",
+    "seller": "IGA",
+    "priceCents": 849,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1389442_EA_ml_primary_front_na_070326_VOILA_479ced0b36f97aa23fe56dd3423b2cceb5c1d737.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=1jny3fx7d089"
+    ],
+    "source": "https://www.iga.ca/fr/produits/compliments-tartinade-au-beurre-aux-pois-chiches-380-g",
+    "providerSource": "https://epiceries.ca/view?i=1jny3fx7d089",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-LbnqRi6I7TGQ",
+    "modes": [
+      "real"
+    ],
+    "category": "Tartinades",
+    "name": "Splenda Stevia Sachet édulcorant sans calories",
+    "description": "Tartinades",
+    "seller": "Walmart",
+    "priceCents": 1157,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/675972a3-6b9c-4dc3-8e10-29cfd0b0537a.0da23ffa0875d19203b413e94649bfc9.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=LbnqRi6I7TGQ"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Splenda-Stevia-Sachet-dulcorant-sans-calories/6000200680712",
+    "providerSource": "https://epiceries.ca/view?i=LbnqRi6I7TGQ",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-2xudnJ98yYA3",
+    "modes": [
+      "real"
+    ],
+    "category": "Condiments",
+    "name": "Fiorfiore sauce aux tomates cerises et aux aubergines",
+    "description": "380ml",
+    "seller": "Walmart",
+    "priceCents": 397,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/97478d17-0e82-4ad3-872a-1b16a470d6a8.296d3d9646d693a78817c2cd1d8c2830.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=2xudnJ98yYA3"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/FiorFiore-Sauce-aux-tomates-cerises-et-aux-aubergines-380ML/6OJXS61VXY4I",
+    "providerSource": "https://epiceries.ca/view?i=2xudnJ98yYA3",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-DfRUd2yXE4QV",
+    "modes": [
+      "real"
+    ],
+    "category": "Condiments",
+    "name": "Ketchup fruits",
+    "description": "Dora · 500ml",
+    "seller": "Maxi",
+    "priceCents": 500,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6481961081_enfr_front_centre_marketing_A_1_GS1_Ecommerce_v1_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=DfRUd2yXE4QV"
+    ],
+    "source": "https://www.maxi.ca/fr/ketchup-fruits/p/21624025_EA",
+    "providerSource": "https://epiceries.ca/view?i=DfRUd2yXE4QV",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-ic4hDkmElSx7",
+    "modes": [
+      "real"
+    ],
+    "category": "Condiments",
+    "name": "Sauce pour pâtes aux quatre fromages",
+    "description": "Rao's · 660ml",
+    "seller": "Metro",
+    "priceCents": 1099,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16804344004638.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=ic4hDkmElSx7"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/aliments-en-conserve-et-en-pot/pates-et-sauces-pour-pates/sauce-pour-pates-aux-quatre-fromages/p/747479005418",
+    "providerSource": "https://epiceries.ca/view?i=ic4hDkmElSx7",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-TkuDYfB6hAx9",
+    "modes": [
+      "real"
+    ],
+    "category": "Condiments",
+    "name": "Salsa moyenne aux fèves noires et maïs",
+    "description": "MTL Gringo · 435ml",
+    "seller": "Metro",
+    "priceCents": 799,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/13421488767006.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=TkuDYfB6hAx9"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/garde-manger/condiments-et-garnitures/salsa-et-guacamole/salsa-moyenne-aux-feves-noires-et-mais/p/628678809048",
+    "providerSource": "https://epiceries.ca/view?i=TkuDYfB6hAx9",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-e9atACV0rxNc",
+    "modes": [
+      "real"
+    ],
+    "category": "Jus",
+    "name": "Mélange de jus ananas-orange",
+    "description": "Jus",
+    "seller": "Walmart",
+    "priceCents": 347,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/47a1d9a8-6b3f-4d8e-9499-8f6011182775.4128f55cc6a70b8f61d8bbdbe9376f71.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=e9atACV0rxNc"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/M-lange-de-Jus-Ananas-Orange/6MB610KX0ORO",
+    "providerSource": "https://epiceries.ca/view?i=e9atACV0rxNc",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-4V8xZlgzbEeu",
+    "modes": [
+      "real"
+    ],
+    "category": "Jus",
+    "name": "Fruite Breuvage avec Vitamine C orange 1.54 L",
+    "description": "Fruite · 1540ml",
+    "seller": "IGA",
+    "priceCents": 399,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/754000000025700000000069352175_VOILA_c2809348b9a9c45e8fc364d042181815d2a58b60.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=4V8xZlgzbEeu"
+    ],
+    "source": "https://www.iga.ca/fr/produits/fruite-breuvage-avec-vitamine-c-orange-1.54-l",
+    "providerSource": "https://epiceries.ca/view?i=4V8xZlgzbEeu",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-YL3cTRH7nJuz",
+    "modes": [
+      "real"
+    ],
+    "category": "Jus",
+    "name": "Compliments Jus de pomme 1.54 L",
+    "description": "Compliments · 1540ml",
+    "seller": "IGA",
+    "priceCents": 469,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/656026_EA_ml_primary_front_VOILA_d960b371a6e93ff6fcd5de1beea4e0108aa41722.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=YL3cTRH7nJuz"
+    ],
+    "source": "https://www.iga.ca/fr/produits/compliments-jus-de-pomme-1.54-l",
+    "providerSource": "https://epiceries.ca/view?i=YL3cTRH7nJuz",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-J39VbmUNGMpO",
+    "modes": [
+      "real"
+    ],
+    "category": "Jus",
+    "name": "Kubus nectar de carotte. bouteille",
+    "description": "Jus",
+    "seller": "Walmart",
+    "priceCents": 297,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/1d41c699-f22e-4d57-925c-367cfc593de7.dafd9bf80132105ccf1717edeadf8e48.jpeg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=J39VbmUNGMpO"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/KUBUS-Nectar-de-Carotte-Bouteille/2AXILAK0WP1X",
+    "providerSource": "https://epiceries.ca/view?i=J39VbmUNGMpO",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-J2wjfihzRDLI",
+    "modes": [
+      "real"
+    ],
+    "category": "Café",
+    "name": "Dosettes de café Nespresso de torréfaction moyenne",
+    "description": "Irrésistible · 10un",
+    "seller": "Metro",
+    "priceCents": 649,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17330287968286.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=J2wjfihzRDLI"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/boissons/cafe/dosettes-et-capsules-de-cafe/dosettes-de-cafe-nespresso-de-torrefaction-moyenne/p/059749965897",
+    "providerSource": "https://epiceries.ca/view?i=J2wjfihzRDLI",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-oMdrPliDhxyb",
+    "modes": [
+      "real"
+    ],
+    "category": "Café",
+    "name": "Café en grains aroma di casa biologique",
+    "description": "Barista · 340g",
+    "seller": "Metro",
+    "priceCents": 899,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16709588418590.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=oMdrPliDhxyb"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/boissons/cafe/grains-de-cafe-entiers/cafe-en-grains-aroma-di-casa-biologique/p/830764004347",
+    "providerSource": "https://epiceries.ca/view?i=oMdrPliDhxyb",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-cYELBXUn1zZT",
+    "modes": [
+      "real"
+    ],
+    "category": "Café",
+    "name": "Starbucks Frappuchino Café épicé à la citrouille 405 ml",
+    "description": "Starbucks · 405ml",
+    "seller": "IGA",
+    "priceCents": 499,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/920825_EA_ml_primary_front_na_010323_VOILA_4c8f3eecf45d4dbfcb97344f24ea64f693e6b2d6.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=cYELBXUn1zZT"
+    ],
+    "source": "https://www.iga.ca/fr/produits/starbucks-frappuchino-café-épicé-à-la-citrouille-405-ml",
+    "providerSource": "https://epiceries.ca/view?i=cYELBXUn1zZT",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-Nik06yubEw2t",
+    "modes": [
+      "real"
+    ],
+    "category": "Café",
+    "name": "Kicking Horse Coffee Café moulu grizzly claw torréfaction foncée biologique 708 g",
+    "description": "Kicking Horse · 708g",
+    "seller": "IGA",
+    "priceCents": 2899,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/754000000025700000000071742368_VOILA_def03bb71fff72d26c5c41faff8f2dfa3abbfc2d.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=Nik06yubEw2t"
+    ],
+    "source": "https://www.iga.ca/fr/produits/kicking-horse-coffee-café-moulu-grizzly-claw-torréfaction-foncée-biologique-708-g",
+    "providerSource": "https://epiceries.ca/view?i=Nik06yubEw2t",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-TsSb0haZWVnG",
+    "modes": [
+      "real"
+    ],
+    "category": "Pain",
+    "name": "Pain aux graines non céréalières",
+    "description": "The Grain Escape · 528g",
+    "seller": "Provigo",
+    "priceCents": 899,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21622905_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=TsSb0haZWVnG"
+    ],
+    "source": "https://www.provigo.ca/fr/pain-aux-graines-non-c-r-ali-res/p/21622905_EA",
+    "providerSource": "https://epiceries.ca/view?i=TsSb0haZWVnG",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-BbOCdjLc2u0Q",
+    "modes": [
+      "real"
+    ],
+    "category": "Pain",
+    "name": "Pain blanc",
+    "description": "The Grain Escape · 528g",
+    "seller": "Provigo",
+    "priceCents": 899,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/21622951_enfr_front_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BbOCdjLc2u0Q"
+    ],
+    "source": "https://www.provigo.ca/fr/pain-blanc/p/21622951_EA",
+    "providerSource": "https://epiceries.ca/view?i=BbOCdjLc2u0Q",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-muDLIXoUhd4w",
+    "modes": [
+      "real"
+    ],
+    "category": "Pain",
+    "name": "Pain belge d'automne",
+    "description": "Première Moisson · 525g",
+    "seller": "Metro",
+    "priceCents": 649,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/11926871703582.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=muDLIXoUhd4w"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/pains-et-patisseries/pains-frais-et-baguettes/miches-et-pains-frais/pain-belge-d-automne/p/029145683992",
+    "providerSource": "https://epiceries.ca/view?i=muDLIXoUhd4w",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-4qZG8Ui5BhSF",
+    "modes": [
+      "real"
+    ],
+    "category": "Pain",
+    "name": "Pain au levain Stonemill® Bakehouse",
+    "description": "Pain",
+    "seller": "Walmart",
+    "priceCents": 497,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6000208349390.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=4qZG8Ui5BhSF"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/pain-au-levain-stonemill-bakehouse/6000208313757",
+    "providerSource": "https://epiceries.ca/view?i=4qZG8Ui5BhSF",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-1zDXfTtMpxSB",
+    "modes": [
+      "real"
+    ],
+    "category": "Desserts glacés",
+    "name": "Amul mango duetz ( x 4pcs) 240ml",
+    "description": "60ml",
+    "seller": "Walmart",
+    "priceCents": 757,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/b75f558f-74b1-4e9b-bf40-31f591e2e83c.5da94324cda93c51575e1b000a6912c4.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=1zDXfTtMpxSB"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/Amul-Mango-Duetz-60ml-x-4pcs-240ml/37Q022PLPG80",
+    "providerSource": "https://epiceries.ca/view?i=1zDXfTtMpxSB",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-rAGlYkzbhByx",
+    "modes": [
+      "real"
+    ],
+    "category": "Desserts glacés",
+    "name": "Solo Fruit Barres Sorbet framboise sans produits laitiers 3 x 88 ml",
+    "description": "SOLOFRUIT · 88ml",
+    "seller": "IGA",
+    "priceCents": 949,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/754000000025700000000058506183_VOILA_76059fb35ccef4921c5f0a94e65c7f463d1ba5f4.JPG"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=rAGlYkzbhByx"
+    ],
+    "source": "https://www.iga.ca/fr/produits/solo-fruit-barres-sorbet-framboise-sans-produits-laitiers-3-x-88-ml",
+    "providerSource": "https://epiceries.ca/view?i=rAGlYkzbhByx",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-A8JZkYWQ7s35",
+    "modes": [
+      "real"
+    ],
+    "category": "Desserts glacés",
+    "name": "Dessert glacé passion de goyave tropicale",
+    "description": "Dole · 414ml",
+    "seller": "Metro",
+    "priceCents": 749,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/16620985188382.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=A8JZkYWQ7s35"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/produits-surgeles/creme-glacee-et-friandises/barres-de-creme-glacee-et-friandises/dessert-glace-passion-de-goyave-tropicale/p/071202004226",
+    "providerSource": "https://epiceries.ca/view?i=A8JZkYWQ7s35",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-enhiOwSV87fG",
+    "modes": [
+      "real"
+    ],
+    "category": "Desserts glacés",
+    "name": "Bâtonnets glacés melon d'eau biologique",
+    "description": "AXIS Y · 55ml",
+    "seller": "Provigo",
+    "priceCents": 999,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/85007185412_enfr_front_centre_marketing_A_1_GS1_Ecommerce_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=enhiOwSV87fG"
+    ],
+    "source": "https://www.provigo.ca/fr/b-tonnets-glac-s-melon-d-eau-biologique/p/21759186_EA",
+    "providerSource": "https://epiceries.ca/view?i=enhiOwSV87fG",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-CgwFnMm79y2t",
+    "modes": [
+      "real"
+    ],
+    "category": "Croustilles",
+    "name": "Samosa chipz salés à la lime et au chili sitara.",
+    "description": "280g",
+    "seller": "Walmart",
+    "priceCents": 427,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6000210078761.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=CgwFnMm79y2t"
+    ],
+    "source": "https://www.walmart.ca/fr/ip/samosa-chipz-sals-la-lime-et-au-chili-sitara-280-g/2LLC5XBA0EBP",
+    "providerSource": "https://epiceries.ca/view?i=CgwFnMm79y2t",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-N0QdsJ8tgG2R",
+    "modes": [
+      "real"
+    ],
+    "category": "Croustilles",
+    "name": "Petits sacs de croustilles de tortillas à saveur de fromage nacho",
+    "description": "Doritos · 640g",
+    "seller": "Metro",
+    "priceCents": 1499,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17331720421406.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=N0QdsJ8tgG2R"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/collations/collations-salees/croustilles/petits-sacs-de-croustilles-de-tortillas-a-saveur-de-fromage-nacho/p/060410064238",
+    "providerSource": "https://epiceries.ca/view?i=N0QdsJ8tgG2R",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-BA2mV0g4rSxi",
+    "modes": [
+      "real"
+    ],
+    "category": "Croustilles",
+    "name": "Croustilles à saveur de ranch",
+    "description": "Ruffles · 180g",
+    "seller": "Metro",
+    "priceCents": 475,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/17200352133150.jpg"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=BA2mV0g4rSxi"
+    ],
+    "source": "https://www.metro.ca/epicerie-en-ligne/allees/collations/collations-salees/croustilles/croustilles-a-saveur-de-ranch/p/060410088227",
+    "providerSource": "https://epiceries.ca/view?i=BA2mV0g4rSxi",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  },
+  {
+    "id": "epi-1EpxkTOqQ2lh",
+    "modes": [
+      "real"
+    ],
+    "category": "Croustilles",
+    "name": "Croustilles crème sure et bacon",
+    "description": "Frito-Lay · 200g",
+    "seller": "Provigo",
+    "priceCents": 529,
+    "currency": "CAD",
+    "priceType": "listed",
+    "images": [
+      "https://cdn.epiceries.ca/6041008731_enfr_front_centre_marketing_A_GS1_Marketing_1200.png"
+    ],
+    "imageSources": [
+      "https://epiceries.ca/view?i=1EpxkTOqQ2lh"
+    ],
+    "source": "https://www.provigo.ca/fr/croustilles-cr-me-sure-et-bacon/p/21758695_EA",
+    "providerSource": "https://epiceries.ca/view?i=1EpxkTOqQ2lh",
+    "provider": "epiceries-ca",
+    "checkedAt": "2026-09-25",
+    "rating": null,
+    "reviewCount": 0
+  }
+]

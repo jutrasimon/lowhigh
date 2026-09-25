@@ -1,5 +1,7 @@
 import { randomBytes, randomInt } from 'node:crypto';
 export function score(guess, price) { return Math.max(0, Math.round(100 * (1 - Math.abs(guess - price) / price))); }
+export const AUCTION_CASH_CENTS=2500000;
+const modes=['real','expert','auction','history'];
 export class Game {
   constructor(products, {now = Date.now, roundMs = 45000, ttlMs = 2 * 3600000} = {}) {
     this.products = products; this.rooms = new Map(); this.now = now; this.roundMs = roundMs; this.ttlMs = ttlMs;
@@ -10,13 +12,13 @@ export class Game {
     this.cleanup(); if(this.rooms.size >= 200) this.fail('Trop de salons. Réessaie plus tard.', 503);
     name = this.name(name);
     let code; do { code = Array.from({length:5},()=> 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[randomInt(32)]).join(''); } while(this.rooms.has(code));
-    const room = {code, phase:'lobby', players:[], round:-1, deck:[], answers:{}, results:[], updated:this.now(), deadline:0};
+    const room = {code, phase:'lobby', mode:'real', historyYear:'mix', players:[], round:-1, deck:[], answers:{}, results:[], holdings:[], updated:this.now(), deadline:0};
     this.rooms.set(code, room); return this.add(room, name);
   }
   add(room, name) {
     name=this.name(name);
     if(room.players.some(p=>p.name.toLocaleLowerCase()===name.toLocaleLowerCase())) this.fail('Ce prénom est déjà pris.');
-    const player={id:randomBytes(8).toString('hex'), token:randomBytes(24).toString('hex'),name,score:0,seen:this.now()};
+    const player={id:randomBytes(8).toString('hex'), token:randomBytes(24).toString('hex'),name,score:0,cashCents:AUCTION_CASH_CENTS,seen:this.now()};
     room.players.push(player); room.host ||= player.id; room.updated=this.now();
     return {code:room.code,token:player.token};
   }
@@ -46,6 +48,15 @@ export class Game {
   }
   reveal(r) {
     if(r.phase!=='guess')return;
+    if(r.mode==='auction') {
+      const bids=r.players.map(p=>({id:p.id,name:p.name,bid:r.answers[p.id]??null}));
+      const highest=Math.max(0,...bids.map(x=>x.bid??0));
+      const tied=bids.filter(x=>x.bid===highest && highest>0);
+      const winner=tied.length?tied[randomInt(tied.length)]:null;
+      if(winner){r.players.find(p=>p.id===winner.id).cashCents-=highest;r.holdings.push({round:r.round,owner:winner.id,bid:highest});}
+      r.results=bids.map(x=>({...x,winner:x.id===winner?.id})).sort((a,b)=>(b.bid??-1)-(a.bid??-1));
+      r.phase='reveal';return;
+    }
     const price=r.deck[r.round].priceCents;
     const diffs=Object.values(r.answers).map(g=>Math.abs(g-price));
     const best=diffs.length ? Math.min(...diffs):Infinity;
@@ -65,7 +76,8 @@ export class Game {
       if(r.phase!=='guess')this.fail('Cette manche est terminée.');
       if(data.round!==r.round)this.fail('Cette réponse appartient à une autre manche.');
       if(Object.hasOwn(r.answers,p.id))this.fail('Ta réponse est déjà verrouillée.');
-      if(!Number.isSafeInteger(data.cents)||data.cents<0||data.cents>100000000)this.fail('Entre un prix entre 0 et 1 000 000 $.');
+      const max=r.mode==='auction'?p.cashCents:100000000;
+      if(!Number.isSafeInteger(data.cents)||data.cents<0||data.cents>max)this.fail(r.mode==='auction'?'Mise invalide ou supérieure à ton argent disponible.':'Entre un prix entre 0 et 1 000 000 $.');
       r.answers[p.id]=data.cents;
       if(r.players.every(p=>Object.hasOwn(r.answers,p.id)))this.reveal(r);
     } else if(type==='leave') {
@@ -76,12 +88,21 @@ export class Game {
       return {ok:true};
     } else {
       if(r.host!==p.id)this.fail('Seul l’hôte peut faire ça.',403);
-      if(type==='start') {
+      if(type==='config') {
+        if(r.phase!=='lobby'&&r.phase!=='finished')this.fail('Change le mode entre deux parties.');
+        if(!modes.includes(data.mode))this.fail('Mode de jeu inconnu.');
+        const years=[...new Set(this.products.filter(x=>x.modes?.includes('history')).map(x=>x.year))].sort();
+        if(data.historyYear!==undefined && data.historyYear!=='mix' && !years.includes(data.historyYear))this.fail('Année indisponible.');
+        r.mode=data.mode;r.historyYear=data.historyYear??r.historyYear;
+        if(r.phase==='finished'){r.phase='lobby';r.round=-1;r.deck=[];r.results=[];r.answers={};r.holdings=[];r.players.forEach(x=>{x.score=0;x.cashCents=AUCTION_CASH_CENTS;});}
+      } else if(type==='start') {
         if(r.phase!=='lobby' && r.phase!=='finished')this.fail('La partie est déjà en cours.');
         if(r.players.length<2)this.fail('Il faut au moins deux joueurs.');
-        r.deck=[...this.products];
+        r.deck=this.products.filter(x=>(x.modes||['real']).includes(r.mode)&&(r.mode!=='history'||r.historyYear==='mix'||x.year===r.historyYear));
+        if(!r.deck.length)this.fail('Aucun produit disponible pour ce mode et cette année.');
         for(let i=r.deck.length-1;i>0;i--){const j=randomInt(i+1);[r.deck[i],r.deck[j]]=[r.deck[j],r.deck[i]];}
-        r.deck=r.deck.slice(0,5); r.round=-1;r.players.forEach(p=>p.score=0);this.nextRound(r);
+        r.deck=r.deck.slice(0,5); r.round=-1;r.holdings=[];
+        r.players.forEach(p=>{p.score=0;p.cashCents=AUCTION_CASH_CENTS;});this.nextRound(r);
       } else if(type==='next') {
         if(r.phase!=='reveal' || data.round!==r.round)this.fail('Impossible de passer à la manche suivante.'); this.nextRound(r);
       } else this.fail('Action inconnue.');
@@ -91,11 +112,16 @@ export class Game {
   view(r,p) {
     this.tick(r);
     const product=r.deck[r.round];
-    return {code:r.code,phase:r.phase,me:p.id,host:r.host,round:r.round,total:r.deck.length||Math.min(5,this.products.length),deadline:r.deadline,serverTime:this.now(),
-      players:r.players.map(x=>({id:x.id,name:x.name,score:x.score,online:this.now()-x.seen<15000,answered:Object.hasOwn(r.answers,x.id)})),
+    const auction=r.mode==='auction',finished=r.phase==='finished';
+    const years=[...new Set(this.products.filter(x=>x.modes?.includes('history')).map(x=>x.year))].sort();
+    return {code:r.code,phase:r.phase,mode:r.mode,historyYear:r.historyYear,historyYears:years,currency:auction?'USD':product?.currency||'CAD',startingCashCents:auction?AUCTION_CASH_CENTS:undefined,me:p.id,host:r.host,round:r.round,total:r.deck.length||5,deadline:r.deadline,serverTime:this.now(),
+      players:r.players.map(x=>({id:x.id,name:x.name,score:x.score,cashCents:auction?x.cashCents:undefined,assetCents:auction&&finished?r.holdings.filter(h=>h.owner===x.id).reduce((sum,h)=>sum+r.deck[h.round].priceCents,0):undefined,totalCents:auction&&finished?x.cashCents+r.holdings.filter(h=>h.owner===x.id).reduce((sum,h)=>sum+r.deck[h.round].priceCents,0):undefined,online:this.now()-x.seen<15000,answered:Object.hasOwn(r.answers,x.id)})),
       myGuess:r.answers[p.id]??null,
-      product:product?{id:product.id,name:product.name,seller:product.seller,description:product.description,images:product.images,rating:product.rating,reviewCount:product.reviewCount,video:product.video||null,provider:product.provider||null}:null,
-      ...(['reveal','finished'].includes(r.phase)&&product?{priceCents:product.priceCents,source:product.source,checkedAt:product.checkedAt,results:r.results}:{} )};
+      product:product?{id:product.id,name:product.name,seller:product.seller,description:product.description,images:product.images||[],imageNote:product.imageNote,category:product.category,year:product.year,rating:product.rating,reviewCount:product.reviewCount,video:product.video||null,provider:product.provider||null}:null,
+      ...(r.phase==='reveal'&&product?(auction?{results:r.results}:{priceCents:product.priceCents,source:product.source,imageSource:product.imageSources?.[0],checkedAt:product.checkedAt,priceNote:product.priceNote,results:r.results}):{}),
+      ...(finished&&auction?{auctionLots:r.deck.map((item,i)=>({round:i,name:item.name,priceCents:item.priceCents,source:item.source,imageSource:item.imageSources?.[0],checkedAt:item.checkedAt,bid:r.holdings.find(h=>h.round===i)?.bid??null,owner:r.holdings.find(h=>h.round===i)?.owner??null}))}:{}),
+      ...(finished&&!auction?{results:r.results,priceCents:product?.priceCents,source:product?.source,checkedAt:product?.checkedAt}:{}),
+    };
   }
   state(code,token){const [r,p]=this.auth(code,token);return this.view(r,p);}
   cleanup(){for(const [code,r]of this.rooms)if(this.now()-r.updated>this.ttlMs)this.rooms.delete(code);}

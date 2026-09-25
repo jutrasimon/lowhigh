@@ -6,7 +6,11 @@ import {fetchRecentProducts} from './scripts/update-products.js';
 const products=JSON.parse(await readFile(new URL('./data/products.json',import.meta.url),'utf8'));
 let liveProducts=[];
 try{liveProducts=JSON.parse(await readFile(new URL('./data/open-prices.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
-export function createServer(game=new Game([...products,...liveProducts]),catalogLoader=fetchRecentProducts) {
+const snapshots=[];
+for(const file of ['grocery.json','collectibles.json','history.json']){
+  try{snapshots.push(...JSON.parse(await readFile(new URL('./data/'+file,import.meta.url),'utf8')));}catch(e){if(e.code!=='ENOENT')throw e;}
+}
+export function createServer(game=new Game([...products,...liveProducts,...snapshots]),catalogLoader=fetchRecentProducts) {
   const limits=new Map();
   let lastRefresh=0,refreshPromise=null;
   const server=http.createServer(async(req,res)=>{
@@ -14,7 +18,7 @@ export function createServer(game=new Game([...products,...liveProducts]),catalo
     try {
       const url=new URL(req.url,'http://localhost');
       res.setHeader('X-Content-Type-Options','nosniff'); res.setHeader('Referrer-Policy','no-referrer');
-      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com https://images.openfoodfacts.org; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com https://images.openfoodfacts.org https://cdn.epiceries.ca https://www.christies.com; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
       if(url.pathname==='/health')return send(200,{ok:true});
       if(url.pathname.startsWith('/api/')) {
         if(req.method!=='GET' && req.method!=='POST')return send(405,{error:'Méthode non permise.'});
@@ -30,7 +34,7 @@ export function createServer(game=new Game([...products,...liveProducts]),catalo
         if(req.method==='POST') {let body='';for await(const chunk of req){body+=chunk;if(body.length>4096)return send(413,{error:'Requête trop longue.'});}try{data=JSON.parse(body);}catch{return send(400,{error:'JSON invalide.'});}if(!data||typeof data!=='object'||Array.isArray(data))return send(400,{error:'Requête invalide.'});}
         if(url.pathname==='/api/create'&&req.method==='POST')return send(201,game.create(data.name));
         if(url.pathname==='/api/join'&&req.method==='POST')return send(200,game.join(data.code,data.name));
-        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|leave|refresh))?$/);
+        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|leave|refresh|config))?$/);
         if(!match)return send(404,{error:'Route introuvable.'});
         const token=req.headers.authorization?.replace(/^Bearer /,'');
         if(req.method==='GET'&&!match[2])return send(200,game.state(match[1],token));
@@ -41,7 +45,7 @@ export function createServer(game=new Game([...products,...liveProducts]),catalo
           if(Date.now()-lastRefresh<15*60000)return send(429,{error:'Les produits ont déjà été actualisés. Réessaie dans 15 minutes.'});
           refreshPromise ||= catalogLoader().then(fresh=>{
             if(!Array.isArray(fresh)||fresh.length<5)throw Error('Catalogue insuffisant; produits précédents conservés.');
-            game.products=[...products,...fresh];lastRefresh=Date.now();return fresh.length;
+            game.products=[...products,...snapshots,...fresh];lastRefresh=Date.now();return fresh.length;
           }).finally(()=>{refreshPromise=null;});
           const count=await refreshPromise;
           return send(200,{...game.state(match[1],token),catalogCount:count});

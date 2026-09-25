@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {Game,score} from '../game.js';
+import {Game,score,AUCTION_CASH_CENTS} from '../game.js';
 import {createServer} from '../server.js';
 const products=Array.from({length:5},(_,i)=>({id:'p'+i,name:'Produit réel test',description:'Description',images:[],priceCents:10000,source:'https://example.com',checkedAt:'2026-09-21'}));
 function setup(options){const game=new Game(products,options),a=game.create('Simon'),b=game.join(a.code,'Alex');return{game,a,b,call:(s,t,d)=>game.action(s.code,s.token,t,d),view:s=>game.state(s.code,s.token)};}
@@ -11,4 +11,57 @@ test('Identité, prix invalides et manche périmée sont rejetés',()=>{const {a
 test('Reconnexion, transfert d’hôte, expiration et salon vide',()=>{let now=1000;const {game,a,b,view,call}=setup({now:()=>now,ttlMs:120000});const original=view(a).me;assert.equal(view(a).me,original);now+=61000;assert.equal(view(b).host,view(b).me);call(b,'leave');assert.equal(view(a).host,original);now+=120001;assert.throws(()=>view(a),/expiré/);const c=game.create('C');game.action(c.code,c.token,'leave');assert.equal(game.rooms.size,0);});
 test('Capacité, minimum de joueurs et noms',()=>{const game=new Game(products);assert.throws(()=>game.create('  '));const a=game.create('A');assert.throws(()=>game.action(a.code,a.token,'start'),/deux joueurs/);assert.throws(()=>game.join(a.code,'a'),/déjà pris/);for(let i=0;i<7;i++)game.join(a.code,'N'+i);assert.throws(()=>game.join(a.code,'Nine'),/complet/);});
 test('Un joueur parti ne reçoit pas le bonus des joueurs restants',()=>{const {a,b,game,call,view}=setup();const c=game.join(a.code,'C');call(a,'start');call(c,'guess',{round:0,cents:10000});call(c,'leave');call(a,'guess',{round:0,cents:9000});call(b,'guess',{round:0,cents:8000});assert.equal(view(a).results.find(x=>x.name==='Simon').bonus,50);});
+test('Modes et années filtrent la banque, l’hôte configure entre deux parties',()=>{
+  const catalog=[...products,...Array.from({length:5},(_,i)=>({...products[i],id:'c'+i,modes:['expert','auction'],currency:'USD'})),
+    ...Array.from({length:5},(_,i)=>({...products[i],id:'h'+i,modes:['history'],year:2000})),
+    {...products[0],id:'h2020',modes:['history'],year:2020}];
+  const game=new Game(catalog),a=game.create('A'),b=game.join(a.code,'B');
+  assert.throws(()=>game.action(b.code,b.token,'config',{mode:'history'}),/hôte/);
+  assert.throws(()=>game.action(a.code,a.token,'config',{mode:'unknown'}),/inconnu/);
+  game.action(a.code,a.token,'config',{mode:'history',historyYear:2000});
+  game.action(a.code,a.token,'start');
+  assert.equal(game.state(a.code,a.token).total,5);
+  assert.equal(game.state(a.code,a.token).product.year,2000);
+  assert.throws(()=>game.action(a.code,a.token,'config',{mode:'auction'}),/entre deux parties/);
+});
+test('Enchères : mises secrètes, budget, invendu et revente finale',()=>{
+  const lots=Array.from({length:5},(_,i)=>({...products[i],id:'lot'+i,name:'Lot '+i,modes:['auction'],currency:'USD',priceCents:100000+i*10000}));
+  let now=0;const game=new Game(lots,{now:()=>now,roundMs:100}),a=game.create('A'),b=game.join(a.code,'B');
+  const call=(s,type,data={})=>game.action(s.code,s.token,type,data),view=s=>game.state(s.code,s.token);
+  call(a,'config',{mode:'auction'});call(a,'start');
+  assert.equal(view(a).startingCashCents,AUCTION_CASH_CENTS);
+  for(let round=0;round<5;round++){
+    const product=view(a).product;
+    assert.equal(view(a).priceCents,undefined);assert.equal(view(a).auctionLots,undefined);
+    call(a,'guess',{round,cents:round===0?50000:0});
+    assert.equal(view(b).myGuess,null);assert.equal(view(b).results,undefined);
+    if(round===0)assert.throws(()=>call(b,'guess',{round,cents:AUCTION_CASH_CENTS+1}),/supérieure/);
+    call(b,'guess',{round,cents:0});
+    const reveal=view(b);assert.equal(reveal.priceCents,undefined);assert.equal(reveal.source,undefined);
+    assert.equal(reveal.results.find(x=>x.winner)?.name,round===0?'A':undefined);
+    if(round===0)assert.equal(view(a).players.find(x=>x.id===view(a).me).cashCents,AUCTION_CASH_CENTS-50000);
+    call(a,'next',{round});
+  }
+  const final=view(a);assert.equal(final.phase,'finished');assert.equal(final.auctionLots.length,5);
+  const bought=final.auctionLots.find(x=>x.owner===final.me);
+  assert.equal(bought.bid,50000);
+  const winner=final.players.find(x=>x.id===final.me);
+  assert.equal(winner.assetCents,bought.priceCents);
+  assert.equal(winner.totalCents,AUCTION_CASH_CENTS-50000+bought.priceCents);
+  assert.equal(final.auctionLots.filter(x=>x.owner===null).length,4);
+  call(a,'config',{mode:'real'});assert.equal(view(a).phase,'lobby');
+});
+test('Enchères : égalité départagée une seule fois, liquidités réellement limitées',()=>{
+  const game=new Game(products.map(p=>({...p,modes:['auction'],currency:'USD'})));
+  const a=game.create('A'),b=game.join(a.code,'B');
+  const call=(s,type,data={})=>game.action(s.code,s.token,type,data),view=s=>game.state(s.code,s.token);
+  call(a,'config',{mode:'auction'});call(a,'start');
+  call(a,'guess',{round:0,cents:AUCTION_CASH_CENTS});call(b,'guess',{round:0,cents:AUCTION_CASH_CENTS});
+  const result=view(a).results;assert.equal(result.filter(x=>x.winner).length,1);
+  const winner=result.find(x=>x.winner);assert.equal(view(a).players.find(x=>x.id===winner.id).cashCents,0);
+  call(a,'next',{round:0});
+  const session=winner.id===view(a).me?a:b;
+  assert.throws(()=>call(session,'guess',{round:1,cents:1}),/supérieure/);
+  call(session,'guess',{round:1,cents:0});
+});
 test('HTTP : deux navigateurs, round trip, fichiers privés inaccessibles',async()=>{const server=createServer(new Game(products));await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;const req=async(path,data,token)=>{const r=await fetch(base+path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},...(data?{body:JSON.stringify(data)}:{})});return{status:r.status,data:await r.json()};};try{assert.equal((await fetch(base+'/')).status,200);for(const path of['/data/products.json','/game.js','/.git/config'])assert.equal((await fetch(base+path)).status,404);const a=(await req('/api/create',{name:'Host'})).data;const b=(await req('/api/join',{name:'Guest',code:a.code})).data;const root='/api/rooms/'+a.code;assert.equal((await req(root)).status,401);assert.equal((await req(root+'/start',{},b.token)).status,403);assert.equal((await req(root+'/start',{},a.token)).data.phase,'guess');await req(root+'/guess',{round:0,cents:10000},a.token);const hidden=(await req(root,null,b.token)).data;assert.equal(hidden.priceCents,undefined);assert.equal(hidden.myGuess,null);const reveal=(await req(root+'/guess',{round:0,cents:5000},b.token)).data;assert.equal(reveal.phase,'reveal');assert.equal(reveal.results[0].points,150);assert.equal((await req(root+'/next',{round:0},a.token)).data.round,1);assert.equal((await req(root+'/next',{round:0},a.token)).status,400);}finally{await new Promise(r=>server.close(r));}});

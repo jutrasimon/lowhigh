@@ -1,16 +1,14 @@
-# Tester la démo avec bots
-
-La démo autonome avec bots se trouve dans `demo/index.html`. GitHub Pages publie uniquement ce dossier. Elle illustre le jeu d’estimation initial avec des produits fixes. Les quatre modes et les banques datées sont dans la version multijoueur Render.
-
 # Low Ball / High Ball
 
 Un jeu de prix multijoueur, navigateur, mobile d’abord. Prototype pour jouer entre amis : https://lowhigh-multiplayer.onrender.com.
 
 **Ce dépôt est l’unique source du projet : code, catalogue, documentation et tests. Aucun projet ChatGPT Sites.**
 
-## Jouer entre amis
+## Tester seul ou entre amis
 
-Ouvrir https://lowhigh-multiplayer.onrender.com, créer un salon et partager le lien. Le serveur Render Free peut prendre un moment à se réveiller. Salons temporaires en mémoire : un redémarrage du service efface les parties en cours.
+Ouvrir https://lowhigh-multiplayer.onrender.com et créer un salon. Pour tester seul, choisir le mode, cliquer **Ajouter 3 bots pour jouer solo**, puis **C’est parti**. Les bots répondent dans les quatre modes et misent avec leur propre budget en enchères. On peut les retirer au lobby pour inviter des amis et partager le lien. Le serveur Render Free peut prendre un moment à se réveiller. Salons temporaires en mémoire : un redémarrage du service efface les parties en cours.
+
+L’ancienne démo statique avec bots (`demo/index.html`) montre seulement le jeu d’estimation initial; le jeu en ligne ci-dessus inclut les quatre modes et les catalogues datés.
 
 ## Lancer localement ou avec Codespaces
 
@@ -26,7 +24,7 @@ Pour deux joueurs sur le même ordinateur, utiliser deux onglets ouverts sépar�
 
 ## Modes de jeu
 
-L’hôte choisit le mode dans le salon, et peut en changer après une partie. De 2 à 8 joueurs, cinq manches de 45 secondes. Le prix ou la valeur de référence reste côté serveur jusqu’au moment prévu par le mode.
+L’hôte choisit le mode dans le salon, et peut en changer après une partie. De 2 à 8 participants (une personne et des bots suffisent), cinq manches de 45 secondes. Le prix ou la valeur de référence reste côté serveur jusqu’au moment prévu par le mode.
 
 | Mode | Questions | Réponse et résultat |
 | --- | --- | --- |
@@ -68,7 +66,7 @@ Node 22+, sans dépendance. HTML/CSS/JS natifs. Pas de base de données ni de cl
 - `.github/workflows/tests.yml` : vérifications à chaque push/PR et à la demande dans Actions.
 - `.devcontainer/devcontainer.json` : lancement du playtest Codespaces.
 
-Les clients interrogent le serveur une fois par seconde. Chronomètre, points, mises et fortune sont calculés côté serveur. L’API ne transmet ni le prix ni les réponses des autres avant leur révélation. Jeton joueur aléatoire en `sessionStorage`, envoyé par en-tête Authorization, jamais dans le lien d’invitation. Un rafraîchissement du même onglet reprend la session. La fermeture de l’onglet peut perdre cette session.
+Les clients interrogent le serveur une fois par seconde. Chronomètre, bots, points, mises et fortune sont calculés côté serveur. Les bots sont simulés autour du prix de référence avec des variations; ils servent à tester, sans prétendre reproduire de vrais joueurs. L’API ne transmet ni le prix ni les réponses des autres avant leur révélation. Jeton joueur aléatoire en `sessionStorage`, envoyé par en-tête Authorization, jamais dans le lien d’invitation. Un rafraîchissement du même onglet reprend la session. La fermeture de l’onglet peut perdre cette session.
 
 Un salon est supprimé après 2 h sans activité; un redémarrage supprime tous les salons. L’hôte peut quitter explicitement et passe la main au prochain joueur. Après 60 s sans nouvelles de l’hôte, le prochain joueur actif prend le relais. Les joueurs absents restent dans la partie jusqu’à leur départ explicite; leur manche expire avec 0 point. Nouvelle arrivée seulement au lobby.
 

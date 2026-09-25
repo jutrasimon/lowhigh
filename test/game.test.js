@@ -64,4 +64,68 @@ test('Enchères : égalité départagée une seule fois, liquidités réellement
   assert.throws(()=>call(session,'guess',{round:1,cents:1}),/supérieure/);
   call(session,'guess',{round:1,cents:0});
 });
+test('Une personne joue les quatre modes avec trois bots, y compris la liquidation aux enchères',()=>{
+  const catalog=[...products,
+    ...products.map((x,i)=>({...x,id:'collectible-'+i,modes:['expert','auction'],currency:'USD',priceCents:50000+i*50000})),
+    ...products.map((x,i)=>({...x,id:'old-'+i,modes:['history'],year:2000}))];
+  let now=1000;const game=new Game(catalog,{now:()=>now,roundMs:100});
+  for(const mode of ['real','expert','auction','history']){
+    const me=game.create('Solo');
+    const call=(type,data={})=>game.action(me.code,me.token,type,data),view=()=>game.state(me.code,me.token);
+    call('bots',{count:3});call('config',{mode,historyYear:mode==='history'?2000:'mix'});
+    assert.equal(view().players.filter(x=>x.bot).length,3);
+    assert.throws(()=>game.state(me.code,null),/Session invalide/);
+    call('start');
+    for(let round=0;round<5;round++){
+      assert.equal(view().phase,'guess');assert.equal(view().priceCents,undefined);
+      call('guess',{round,cents:mode==='auction'?5000:10000});
+      assert.equal(view().results,undefined);
+      now+=40;const reveal=view();assert.equal(reveal.phase,'reveal');
+      assert.equal(reveal.players.filter(x=>x.answered).length,4);
+      assert.equal(reveal.results.length,4);
+      if(mode==='auction'){
+        assert.equal(reveal.priceCents,undefined);
+        assert.ok(reveal.players.every(x=>x.cashCents>=0));
+      }
+      call('next',{round});
+    }
+    const final=view();assert.equal(final.phase,'finished');
+    if(mode==='auction')assert.equal(final.auctionLots.length,5);
+    else assert.ok(final.players.some(x=>x.score>0));
+    call('leave');assert.throws(()=>view(),/introuvable/);
+  }
+});
+test('Bots : seul l’hôte choisit leur nombre, le salon garde sa capacité',()=>{
+  const game=new Game(products),a=game.create('Alex · bot'),b=game.join(a.code,'B');
+  assert.throws(()=>game.action(b.code,b.token,'bots',{count:3}),/hôte/);
+  assert.throws(()=>game.action(a.code,a.token,'bots',{count:4}),/0 à 3/);
+  game.action(a.code,a.token,'bots',{count:3});
+  const bots=game.state(a.code,a.token).players.filter(x=>x.bot);
+  assert.equal(bots.length,3);assert.equal(new Set(game.state(a.code,a.token).players.map(x=>x.name)).size,5);
+  for(let i=0;i<3;i++)game.join(a.code,'Human '+i);
+  assert.throws(()=>game.join(a.code,'Too many'),/complet/);
+  game.action(a.code,a.token,'bots',{count:0});game.join(a.code,'Human 4');
+  assert.throws(()=>game.action(a.code,a.token,'bots',{count:3}),/8 joueurs/);
+  game.action(a.code,a.token,'bots',{count:2});assert.equal(game.state(a.code,a.token).players.filter(x=>x.bot).length,2);
+});
 test('HTTP : deux navigateurs, round trip, fichiers privés inaccessibles',async()=>{const server=createServer(new Game(products));await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;const req=async(path,data,token)=>{const r=await fetch(base+path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},...(data?{body:JSON.stringify(data)}:{})});return{status:r.status,data:await r.json()};};try{assert.equal((await fetch(base+'/')).status,200);for(const path of['/data/products.json','/game.js','/.git/config'])assert.equal((await fetch(base+path)).status,404);const a=(await req('/api/create',{name:'Host'})).data;const b=(await req('/api/join',{name:'Guest',code:a.code})).data;const root='/api/rooms/'+a.code;assert.equal((await req(root)).status,401);assert.equal((await req(root+'/start',{},b.token)).status,403);assert.equal((await req(root+'/start',{},a.token)).data.phase,'guess');await req(root+'/guess',{round:0,cents:10000},a.token);const hidden=(await req(root,null,b.token)).data;assert.equal(hidden.priceCents,undefined);assert.equal(hidden.myGuess,null);const reveal=(await req(root+'/guess',{round:0,cents:5000},b.token)).data;assert.equal(reveal.phase,'reveal');assert.equal(reveal.results[0].points,150);assert.equal((await req(root+'/next',{round:0},a.token)).data.round,1);assert.equal((await req(root+'/next',{round:0},a.token)).status,400);}finally{await new Promise(r=>server.close(r));}});
+test('HTTP : créer un salon solo et ajouter trois bots',async()=>{
+  let now=1000;const server=createServer(new Game(products,{now:()=>now,roundMs:100}));
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const base='http://127.0.0.1:'+server.address().port;
+  const request=async(path,data,token)=>{
+    const response=await fetch(base+path,{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:'Bearer '+token}:{})},body:JSON.stringify(data)});
+    return {status:response.status,data:await response.json()};
+  };
+  try{
+    const a=(await request('/api/create',{name:'Solo'})).data,root='/api/rooms/'+a.code;
+    assert.equal((await request(root+'/bots',{count:3})).status,401);
+    const lobby=(await request(root+'/bots',{count:3},a.token)).data;
+    assert.equal(lobby.players.filter(p=>p.bot).length,3);
+    assert.equal((await request(root+'/start',{},a.token)).data.phase,'guess');
+    await request(root+'/guess',{round:0,cents:9000},a.token);
+    now+=40;
+    const reveal=await fetch(base+root,{headers:{Authorization:'Bearer '+a.token}}).then(r=>r.json());
+    assert.equal(reveal.phase,'reveal');assert.equal(reveal.results.length,4);
+  }finally{await new Promise(resolve=>server.close(resolve));}
+});

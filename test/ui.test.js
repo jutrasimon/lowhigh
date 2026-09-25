@@ -21,6 +21,7 @@ test('Les quatre modes rendent le lobby, la manche, la révélation et la fin',a
     const call=(who,type,data={})=>game.action(who.code,who.token,type,data),view=()=>game.state(a.code,a.token);
     call(a,'config',{mode,historyYear:mode==='history'?2000:'mix'});
     assert.match(draw(view()),/mode-select/);
+    assert.match(draw(view()),/id="bots"/);
     call(a,'start');assert.match(draw(view()),/guess-form/);
     for(let round=0;round<5;round++){
       call(a,'guess',{round,cents:100});call(b,'guess',{round,cents:0});

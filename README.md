@@ -37,7 +37,7 @@ Dans les modes d’estimation, aucune réponse rapporte 0. Une réponse exacte r
 
 ## Catalogue et photos
 
-Les données sont des **instantanés datés**, pas des demandes en direct à chaque question. Les prix sont conservés sur le serveur. Les images sont récupérées depuis leurs sources par le serveur, puis servies sous le bon format et mises en cache pour les joueurs. Chaque entrée indique son type de prix, sa devise, sa date et son lien de vérification.
+Les données sont des **instantanés datés**, pas des demandes en direct à chaque question. Les prix sont conservés sur le serveur. Les photos d’épicerie, d’IKEA et d’Open Food Facts passent par le serveur, qui corrige leur format et les met en cache; le navigateur garde l’URL d’origine comme repli. Les photos Christie’s sont chargées directement, car leur serveur bloque celui de l’hébergement. Chaque entrée indique son type de prix, sa devise, sa date et son lien de vérification.
 
 `data/verified-photos.json` conserve les photos dont le contenu répondait encore lors du dernier audit. Le serveur retire du tirage les produits sans photo valide. Si une image cesse de fonctionner en cours de partie, l’hôte peut **Passer ce produit** : il est remplacé sans consommer la manche ni attribuer de points.
 

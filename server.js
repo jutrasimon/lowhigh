@@ -17,8 +17,8 @@ const curated=[...products,...liveProducts,...snapshots].map(p=>({...p,images:(p
 export function createServer(game=new Game(curated),catalogLoader=fetchRecentProducts,imageRequest=fetch) {
   const limits=new Map();
   const imageSources=new Map(),imageCache=new Map(),imageFailures=new Map();
-  const localize=item=>({...item,images:(item.images||[]).map(url=>{
-    if(!/^https:\/\/(?:www\.ikea\.com|images\.openfoodfacts\.org|cdn\.epiceries\.ca|www\.christies\.com)\//.test(url))return url;
+  const localize=item=>({...item,backupImages:[...(item.images||[])],images:(item.images||[]).map(url=>{
+    if(!/^https:\/\/(?:www\.ikea\.com|images\.openfoodfacts\.org|cdn\.epiceries\.ca)\//.test(url))return url;
     const id=createHash('sha256').update(url).digest('hex').slice(0,32);
     imageSources.set(id,url);return '/image/'+id;
   })});
@@ -29,7 +29,7 @@ export function createServer(game=new Game(curated),catalogLoader=fetchRecentPro
     try {
       const url=new URL(req.url,'http://localhost');
       res.setHeader('X-Content-Type-Options','nosniff'); res.setHeader('Referrer-Policy','no-referrer');
-      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self'; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com https://images.openfoodfacts.org https://cdn.epiceries.ca https://www.christies.com; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
       if(url.pathname==='/health')return send(200,{ok:true});
       const imageId=url.pathname.match(/^\/image\/([a-f0-9]{32})$/)?.[1];
       if(imageId&&req.method==='GET'){

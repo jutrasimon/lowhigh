@@ -42,10 +42,19 @@ test('Le serveur sert une photo AVIF sous le bon type malgré le type erroné du
     const a=await post('/api/create',{name:'A'});await post('/api/join',{name:'B',code:a.code});
     const state=await post('/api/rooms/'+a.code+'/start',{},a.token);
     assert.match(state.product.images[0],/^\/image\/[a-f0-9]{32}$/);
+    assert.equal(state.product.backupImages[0],photo);
     const response=await fetch(base+state.product.images[0]);
     assert.equal(response.status,200);assert.equal(response.headers.get('content-type'),'image/avif');
     assert.equal((await response.arrayBuffer()).byteLength,bytes.length);
   }finally{await new Promise(resolve=>server.close(resolve));}
+});
+test('Les photos Christie’s gardent leur URL directe',async()=>{
+  const photo='https://www.christies.com/img/LotImages/test.jpg';
+  const game=new Game([{id:'lot',name:'Lot',images:[photo],priceCents:1000,modes:['expert']}]);
+  const server=createServer(game);
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  try{assert.equal(game.products[0].images[0],photo);assert.equal(game.products[0].backupImages[0],photo);}
+  finally{await new Promise(resolve=>server.close(resolve));}
 });
 
 test('Une mise à jour insuffisante préserve le catalogue précédent',async()=>{

@@ -37,9 +37,9 @@ Dans les modes d’estimation, aucune réponse rapporte 0. Une réponse exacte r
 
 ## Catalogue et photos
 
-Les données sont des **instantanés datés**, pas des demandes en direct à chaque question. Les prix sont conservés sur le serveur et les images sont servies à partir des URL de leurs sources. Chaque entrée indique son type de prix, sa devise, sa date et son lien de vérification.
+Les données sont des **instantanés datés**, pas des demandes en direct à chaque question. Les prix sont conservés sur le serveur. Les images sont récupérées depuis leurs sources par le serveur, puis servies sous le bon format et mises en cache pour les joueurs. Chaque entrée indique son type de prix, sa devise, sa date et son lien de vérification.
 
-`data/verified-photos.json` conserve les photos qui répondaient encore lors du dernier audit. Le serveur retire du tirage les produits sans photo valide. Si une image cesse de fonctionner en cours de partie, l’hôte peut **Passer ce produit** : il est remplacé sans consommer la manche ni attribuer de points.
+`data/verified-photos.json` conserve les photos dont le contenu répondait encore lors du dernier audit. Le serveur retire du tirage les produits sans photo valide. Si une image cesse de fonctionner en cours de partie, l’hôte peut **Passer ce produit** : il est remplacé sans consommer la manche ni attribuer de points.
 
 - `data/products.json` : cinq articles IKEA Canada avec trois photos par produit.
 - `data/open-prices.json` : relevés canadiens d’[Open Prices](https://prices.openfoodfacts.org/) (ODbL), avec magasin et photo d’Open Food Facts.
@@ -51,7 +51,7 @@ Les données sont des **instantanés datés**, pas des demandes en direct à cha
 
 `npm run update:grocery` interroge l’API publique épiceries.ca et reconstruit manuellement l’instantané avec des produits récents et photographiés. `npm run update:collectibles` revérifie les lots Christie’s présélectionnés et leurs photos. `npm run update:history` régénère les moyennes depuis le CSV officiel de Statistique Canada. Ces scripts ne sont **pas planifiés**. Un changement de source ou d’URL peut nécessiter une révision humaine; aucune clé payante n’est requise.
 
-Après une mise à jour des catalogues, exécuter `npm run audit:photos` et inclure le manifeste produit dans le commit. L’audit teste uniquement les URL des images, sans télécharger les photos. Le bouton du salon revérifie aussi les photos des nouveaux relevés Open Prices avant de les ajouter.
+Après une mise à jour des catalogues, exécuter `npm run audit:photos` et inclure le manifeste produit dans le commit. L’audit lit le début de chaque image pour reconnaître son format réel, même si le fournisseur annonce le mauvais type. Le bouton du salon revérifie aussi les photos des nouveaux relevés Open Prices avant de les ajouter.
 
 L’hôte peut aussi cliquer **Actualiser les produits du quotidien** dans le salon : cela récupère les relevés récents d’Open Prices, sans changer les autres banques. Limite globale de 15 minutes. Les parties en cours gardent leur sélection. L’actualisation faite dans le jeu est en mémoire seulement. Pour conserver les relevés Open Prices après redémarrage : `npm run update:products` ou **Actions → Actualiser les produits** sur GitHub, puis déployer le nouveau commit.
 

@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {selectProducts,updateProducts} from '../scripts/update-products.js';
-import {verifyProducts} from '../scripts/audit-images.js';
+import {verifyProducts,imageMime} from '../scripts/audit-images.js';
 import {createServer} from '../server.js';
 import {Game} from '../game.js';
 
@@ -22,11 +22,30 @@ test('Les relevés canadiens valides deviennent des produits avec vendeur, date 
 });
 test('L’audit écarte les photos mortes et les produits sans autre image',async()=>{
   const good='https://cdn.epiceries.ca/good.jpg',bad='https://cdn.epiceries.ca/missing.jpg';
+  const avif=Buffer.concat([Buffer.from('0000001c6674797061766966','hex'),Buffer.alloc(1024)]);
   const result=await verifyProducts([{id:'a',images:[bad,good]},{id:'b',images:[bad]}],{
-    request:async url=>new Response(null,{status:url===good?200:404,headers:{'content-type':url===good?'image/jpeg':'text/html'}})
+    request:async url=>new Response(url===good?avif:null,{status:url===good?200:404,headers:{'content-type':url===good?'image/png':'text/html'}})
   });
   assert.deepEqual(result.products.map(x=>({id:x.id,images:x.images})),[{id:'a',images:[good]}]);
   assert.equal(result.checked,2);
+  assert.equal(imageMime(avif),'image/avif');
+});
+test('Le serveur sert une photo AVIF sous le bon type malgré le type erroné du fournisseur',async()=>{
+  const photo='https://cdn.epiceries.ca/photo.png';
+  const bytes=Buffer.concat([Buffer.from('0000001c6674797061766966','hex'),Buffer.alloc(1024)]);
+  const product={id:'image-test',name:'Produit',description:'Format test',images:[photo],priceCents:1000};
+  const server=createServer(new Game([product]),async()=>[],async()=>new Response(bytes,{status:200,headers:{'content-type':'image/png'}}));
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const base='http://127.0.0.1:'+server.address().port;
+  try{
+    const post=async(path,body,token)=>fetch(base+path,{method:'POST',headers:{'content-type':'application/json',...(token?{authorization:'Bearer '+token}:{})},body:JSON.stringify(body)}).then(r=>r.json());
+    const a=await post('/api/create',{name:'A'});await post('/api/join',{name:'B',code:a.code});
+    const state=await post('/api/rooms/'+a.code+'/start',{},a.token);
+    assert.match(state.product.images[0],/^\/image\/[a-f0-9]{32}$/);
+    const response=await fetch(base+state.product.images[0]);
+    assert.equal(response.status,200);assert.equal(response.headers.get('content-type'),'image/avif');
+    assert.equal((await response.arrayBuffer()).byteLength,bytes.length);
+  }finally{await new Promise(resolve=>server.close(resolve));}
 });
 
 test('Une mise à jour insuffisante préserve le catalogue précédent',async()=>{

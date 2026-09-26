@@ -1,9 +1,10 @@
 import http from 'node:http';
+import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Game} from './game.js';
 import {fetchRecentProducts} from './scripts/update-products.js';
-import {verifyProducts} from './scripts/audit-images.js';
+import {verifyProducts,downloadImage} from './scripts/audit-images.js';
 const products=JSON.parse(await readFile(new URL('./data/products.json',import.meta.url),'utf8'));
 let liveProducts=[];
 try{liveProducts=JSON.parse(await readFile(new URL('./data/open-prices.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
@@ -13,16 +14,37 @@ for(const file of ['grocery.json','collectibles.json','history.json']){
 }
 const verified=new Set(JSON.parse(await readFile(new URL('./data/verified-photos.json',import.meta.url),'utf8')).urls);
 const curated=[...products,...liveProducts,...snapshots].map(p=>({...p,images:(p.images||[]).filter(url=>verified.has(url))})).filter(p=>p.images.length);
-export function createServer(game=new Game(curated),catalogLoader=fetchRecentProducts) {
+export function createServer(game=new Game(curated),catalogLoader=fetchRecentProducts,imageRequest=fetch) {
   const limits=new Map();
+  const imageSources=new Map(),imageCache=new Map(),imageFailures=new Map();
+  const localize=item=>({...item,images:(item.images||[]).map(url=>{
+    if(!/^https:\/\/(?:www\.ikea\.com|images\.openfoodfacts\.org|cdn\.epiceries\.ca|www\.christies\.com)\//.test(url))return url;
+    const id=createHash('sha256').update(url).digest('hex').slice(0,32);
+    imageSources.set(id,url);return '/image/'+id;
+  })});
+  game.products=game.products.map(localize);
   let lastRefresh=0,refreshPromise=null;
   const server=http.createServer(async(req,res)=>{
     const send=(status,body)=>{res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify(body));};
     try {
       const url=new URL(req.url,'http://localhost');
       res.setHeader('X-Content-Type-Options','nosniff'); res.setHeader('Referrer-Policy','no-referrer');
-      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self' https://www.ikea.com https://images.openfoodfacts.org https://cdn.epiceries.ca https://www.christies.com; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+      res.setHeader('Content-Security-Policy',"default-src 'self'; img-src 'self'; media-src https://www.ikea.com; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
       if(url.pathname==='/health')return send(200,{ok:true});
+      const imageId=url.pathname.match(/^\/image\/([a-f0-9]{32})$/)?.[1];
+      if(imageId&&req.method==='GET'){
+        const source=imageSources.get(imageId);
+        if(!source||Date.now()<(imageFailures.get(imageId)||0))return send(404,{error:'Photo indisponible.'});
+        try{
+          if(!imageCache.has(imageId))imageCache.set(imageId,downloadImage(source,imageRequest));
+          const {bytes,mime}=await imageCache.get(imageId);
+          res.writeHead(200,{'Content-Type':mime,'Content-Length':bytes.length,'Cache-Control':'public, max-age=86400'});
+          return res.end(bytes);
+        }catch{
+          imageCache.delete(imageId);imageFailures.set(imageId,Date.now()+60000);
+          return send(404,{error:'Photo indisponible.'});
+        }
+      }
       if(url.pathname.startsWith('/api/')) {
         if(req.method!=='GET' && req.method!=='POST')return send(405,{error:'Méthode non permise.'});
         if(req.method==='POST') {
@@ -48,9 +70,9 @@ export function createServer(game=new Game(curated),catalogLoader=fetchRecentPro
           if(Date.now()-lastRefresh<15*60000)return send(429,{error:'Les produits ont déjà été actualisés. Réessaie dans 15 minutes.'});
           refreshPromise ||= catalogLoader().then(async fresh=>{
             if(!Array.isArray(fresh)||fresh.length<5)throw Error('Catalogue insuffisant; produits précédents conservés.');
-            const checked=catalogLoader===fetchRecentProducts?(await verifyProducts(fresh)).products:fresh;
+            const checked=catalogLoader===fetchRecentProducts?(await verifyProducts(fresh,{request:imageRequest})).products:fresh;
             if(checked.length<5)throw Error('Moins de 5 produits avec photo valide; catalogue précédent conservé.');
-            game.products=[...curated.filter(p=>p.provider!=='open-prices'),...checked];lastRefresh=Date.now();return checked.length;
+            game.products=[...curated.filter(p=>p.provider!=='open-prices'),...checked].map(localize);lastRefresh=Date.now();return checked.length;
           }).finally(()=>{refreshPromise=null;});
           const count=await refreshPromise;
           return send(200,{...game.state(match[1],token),catalogCount:count});

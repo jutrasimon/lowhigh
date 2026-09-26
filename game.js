@@ -13,7 +13,7 @@ export class Game {
     this.cleanup(); if(this.rooms.size >= 200) this.fail('Trop de salons. Réessaie plus tard.', 503);
     name = this.name(name);
     let code; do { code = Array.from({length:5},()=> 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[randomInt(32)]).join(''); } while(this.rooms.has(code));
-    const room = {code, phase:'lobby', mode:'real', historyYear:'mix', players:[], round:-1, deck:[], answers:{}, results:[], holdings:[], updated:this.now(), deadline:0};
+    const room = {code, phase:'lobby', mode:'real', historyYear:'mix', players:[], round:-1, deck:[], reserve:[], answers:{}, results:[], holdings:[], updated:this.now(), deadline:0};
     this.rooms.set(code, room); return this.add(room, name);
   }
   add(room, name) {
@@ -43,7 +43,7 @@ export class Game {
     return [r,p];
   }
   nextRound(r) {
-    r.round++; r.answers={}; r.results=[];r.botAt={};
+    r.round++; r.roundKey=randomBytes(5).toString('hex');r.answers={}; r.results=[];r.botAt={};r.revealedAt=0;r.revealSkipped=false;
     if(r.round>=r.deck.length){r.phase='finished'; return;}
     r.phase='guess'; r.deadline=this.now()+this.roundMs;
     for(const player of r.players.filter(p=>p.bot))r.botAt[player.id]=this.now()+Math.max(1,Math.floor(this.roundMs*(.12+randomInt(20)/100)));
@@ -68,7 +68,7 @@ export class Game {
       const winner=tied.length?tied[randomInt(tied.length)]:null;
       if(winner){r.players.find(p=>p.id===winner.id).cashCents-=highest;r.holdings.push({round:r.round,owner:winner.id,bid:highest});}
       r.results=bids.map(x=>({...x,winner:x.id===winner?.id})).sort((a,b)=>(b.bid??-1)-(a.bid??-1));
-      r.phase='reveal';return;
+      r.revealedAt=this.now();r.phase='reveal';return;
     }
     const price=r.deck[r.round].priceCents;
     const diffs=Object.values(r.answers).map(g=>Math.abs(g-price));
@@ -80,7 +80,7 @@ export class Game {
       p.score+=base+bonus;
       return {id:p.id,name:p.name,guess:answered?guess:null,base,bonus,points:base+bonus,closest};
     }).sort((a,b)=>b.points-a.points);
-    r.phase='reveal';
+    r.revealedAt=this.now();r.phase='reveal';
   }
   tick(r){
     if(r.phase!=='guess')return;
@@ -112,7 +112,7 @@ export class Game {
         const years=[...new Set(this.products.filter(x=>x.modes?.includes('history')).map(x=>x.year))].sort();
         if(data.historyYear!==undefined && data.historyYear!=='mix' && !years.includes(data.historyYear))this.fail('Année indisponible.');
         r.mode=data.mode;r.historyYear=data.historyYear??r.historyYear;
-        if(r.phase==='finished'){r.phase='lobby';r.round=-1;r.deck=[];r.results=[];r.answers={};r.holdings=[];r.players.forEach(x=>{x.score=0;x.cashCents=AUCTION_CASH_CENTS;});}
+        if(r.phase==='finished'){r.phase='lobby';r.round=-1;r.deck=[];r.reserve=[];r.results=[];r.answers={};r.holdings=[];r.players.forEach(x=>{x.score=0;x.cashCents=AUCTION_CASH_CENTS;});}
       } else if(type==='bots') {
         if(r.phase!=='lobby')this.fail('Ajoute des bots avant la partie.');
         if(!Number.isInteger(data.count)||data.count<0||data.count>3)this.fail('Choisis de 0 à 3 bots.');
@@ -127,11 +127,22 @@ export class Game {
       } else if(type==='start') {
         if(r.phase!=='lobby' && r.phase!=='finished')this.fail('La partie est déjà en cours.');
         if(r.players.length<2)this.fail('Il faut au moins deux joueurs.');
-        r.deck=this.products.filter(x=>(x.modes||['real']).includes(r.mode)&&(r.mode!=='history'||r.historyYear==='mix'||x.year===r.historyYear));
-        if(!r.deck.length)this.fail('Aucun produit disponible pour ce mode et cette année.');
-        for(let i=r.deck.length-1;i>0;i--){const j=randomInt(i+1);[r.deck[i],r.deck[j]]=[r.deck[j],r.deck[i]];}
-        r.deck=r.deck.slice(0,5); r.round=-1;r.holdings=[];
+        const catalog=this.products.filter(x=>(x.modes||['real']).includes(r.mode)&&(r.mode!=='history'||r.historyYear==='mix'||x.year===r.historyYear)&&x.images?.length);
+        if(!catalog.length)this.fail('Aucun produit avec photo disponible pour ce mode et cette année.');
+        for(let i=catalog.length-1;i>0;i--){const j=randomInt(i+1);[catalog[i],catalog[j]]=[catalog[j],catalog[i]];}
+        r.deck=catalog.slice(0,5);r.reserve=catalog.slice(5);r.round=-1;r.holdings=[];
         r.players.forEach(p=>{p.score=0;p.cashCents=AUCTION_CASH_CENTS;});this.nextRound(r);
+      } else if(type==='skip') {
+        if(r.phase!=='guess')this.fail('Ce produit ne peut plus être passé.');
+        if(data.round!==r.round||data.roundKey!==r.roundKey)this.fail('Ce produit a déjà changé.');
+        if(!r.reserve.length)this.fail('Aucun autre produit disponible dans ce mode.');
+        r.deck[r.round]=r.reserve.shift();r.roundKey=randomBytes(5).toString('hex');r.answers={};r.results=[];
+        r.deadline=this.now()+this.roundMs;r.botAt={};
+        for(const bot of r.players.filter(x=>x.bot))r.botAt[bot.id]=this.now()+Math.max(1,Math.floor(this.roundMs*(.12+randomInt(20)/100)));
+      } else if(type==='revealSkip') {
+        if(r.phase!=='reveal'||r.mode==='auction')this.fail('Aucune animation à passer.');
+        if(data.round!==r.round||data.roundKey!==r.roundKey)this.fail('Cette manche a déjà changé.');
+        r.revealSkipped=true;
       } else if(type==='next') {
         if(r.phase!=='reveal' || data.round!==r.round)this.fail('Impossible de passer à la manche suivante.'); this.nextRound(r);
       } else this.fail('Action inconnue.');
@@ -143,7 +154,7 @@ export class Game {
     const product=r.deck[r.round];
     const auction=r.mode==='auction',finished=r.phase==='finished';
     const years=[...new Set(this.products.filter(x=>x.modes?.includes('history')).map(x=>x.year))].sort();
-    return {code:r.code,phase:r.phase,mode:r.mode,historyYear:r.historyYear,historyYears:years,currency:auction?'USD':product?.currency||'CAD',startingCashCents:auction?AUCTION_CASH_CENTS:undefined,me:p.id,host:r.host,round:r.round,total:r.deck.length||5,deadline:r.deadline,serverTime:this.now(),
+    return {code:r.code,phase:r.phase,mode:r.mode,historyYear:r.historyYear,historyYears:years,currency:auction?'USD':product?.currency||'CAD',startingCashCents:auction?AUCTION_CASH_CENTS:undefined,me:p.id,host:r.host,round:r.round,roundKey:r.roundKey,reserveCount:r.reserve.length,total:r.deck.length||5,deadline:r.deadline,revealedAt:r.revealedAt,revealSkipped:!!r.revealSkipped,serverTime:this.now(),
       players:r.players.map(x=>({id:x.id,name:x.name,bot:!!x.bot,score:x.score,cashCents:auction?x.cashCents:undefined,assetCents:auction&&finished?r.holdings.filter(h=>h.owner===x.id).reduce((sum,h)=>sum+r.deck[h.round].priceCents,0):undefined,totalCents:auction&&finished?x.cashCents+r.holdings.filter(h=>h.owner===x.id).reduce((sum,h)=>sum+r.deck[h.round].priceCents,0):undefined,online:x.bot||this.now()-x.seen<15000,answered:Object.hasOwn(r.answers,x.id)})),
       myGuess:r.answers[p.id]??null,
       product:product?{id:product.id,name:product.name,seller:product.seller,description:product.description,images:product.images||[],imageNote:product.imageNote,category:product.category,year:product.year,rating:product.rating,reviewCount:product.reviewCount,video:product.video||null,provider:product.provider||null}:null,

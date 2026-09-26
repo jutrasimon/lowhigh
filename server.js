@@ -34,7 +34,7 @@ export function createServer(game=new Game([...products,...liveProducts,...snaps
         if(req.method==='POST') {let body='';for await(const chunk of req){body+=chunk;if(body.length>4096)return send(413,{error:'Requête trop longue.'});}try{data=JSON.parse(body);}catch{return send(400,{error:'JSON invalide.'});}if(!data||typeof data!=='object'||Array.isArray(data))return send(400,{error:'Requête invalide.'});}
         if(url.pathname==='/api/create'&&req.method==='POST')return send(201,game.create(data.name));
         if(url.pathname==='/api/join'&&req.method==='POST')return send(200,game.join(data.code,data.name));
-        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|leave|refresh|config|bots))?$/);
+        const match=url.pathname.match(/^\/api\/rooms\/([A-Z2-9]{5})(?:\/(guess|start|next|skip|revealSkip|leave|refresh|config|bots))?$/);
         if(!match)return send(404,{error:'Route introuvable.'});
         const token=req.headers.authorization?.replace(/^Bearer /,'');
         if(req.method==='GET'&&!match[2])return send(200,game.state(match[1],token));

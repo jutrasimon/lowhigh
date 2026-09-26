@@ -26,9 +26,12 @@ test('Les quatre modes rendent le lobby, la manche, la révélation et la fin',a
     assert.match(lobby,mode==='history'?/En 2000, combien ça coûtait au Canada\?/:/mode-bubble.*role="status"/);
     assert.match(draw(view()),/id="bots"/);
     call(a,'start');assert.match(draw(view()),/guess-form/);
+    assert.match(draw(view()),/id="skip-product"/);
     for(let round=0;round<5;round++){
       call(a,'guess',{round,cents:100});call(b,'guess',{round,cents:0});
-      assert.match(draw(view()),mode==='auction'?/MISES RÉVÉLÉES/:/PRIX DE RÉFÉRENCE/);
+      const reveal=draw(view());
+      assert.match(reveal,mode==='auction'?/MISES RÉVÉLÉES/:/PRIX DE RÉFÉRENCE/);
+      if(mode!=='auction'){assert.match(reveal,/id="reveal-overlay"/);assert.match(reveal,/id="skip-reveal"/);}
       call(a,'next',{round});
     }
     assert.match(draw(view()),mode==='auction'?/VENTE FINALE/:/CLASSEMENT FINAL/);

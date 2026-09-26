@@ -2,9 +2,25 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Game,score,AUCTION_CASH_CENTS} from '../game.js';
 import {createServer} from '../server.js';
-const products=Array.from({length:5},(_,i)=>({id:'p'+i,name:'Produit réel test',description:'Description',images:[],priceCents:10000,source:'https://example.com',checkedAt:'2026-09-21'}));
+const products=Array.from({length:5},(_,i)=>({id:'p'+i,name:'Produit réel test',description:'Description',images:['https://example.com/photo.jpg'],priceCents:10000,source:'https://example.com',checkedAt:'2026-09-21'}));
 function setup(options){const game=new Game(products,options),a=game.create('Simon'),b=game.join(a.code,'Alex');return{game,a,b,call:(s,t,d)=>game.action(s.code,s.token,t,d),view:s=>game.state(s.code,s.token)};}
 test('La proximité est symétrique, plafonnée et proportionnelle au prix',()=>{assert.equal(score(10000,10000),100);assert.equal(score(9000,10000),90);assert.equal(score(11000,10000),90);assert.equal(score(100000,10000),0);assert.equal(score(0,10000),0);assert.equal(score(900,1000),90);});
+test('L’hôte remplace un produit sans photo ou défectueux sans consommer la manche',()=>{
+  let now=1000;
+  const catalog=[...products,...[5,6].map(i=>({...products[0],id:'p'+i})),{...products[0],id:'sans-photo',images:[]}];
+  const game=new Game(catalog,{now:()=>now}),a=game.create('A'),b=game.join(a.code,'B');
+  const call=(who,type,data={})=>game.action(who.code,who.token,type,data),view=()=>game.state(a.code,a.token);
+  call(a,'start');assert.notEqual(view().product.id,'sans-photo');
+  const first=view().product.id,key=view().roundKey;
+  call(a,'guess',{round:0,cents:10000});
+  assert.throws(()=>call(b,'skip'),/hôte/);
+  now+=2000;call(a,'skip',{round:0,roundKey:key});
+  assert.equal(view().round,0);assert.notEqual(view().product.id,first);assert.notEqual(view().roundKey,key);
+  assert.equal(view().myGuess,null);assert.equal(view().players[0].score,0);assert.equal(view().deadline,now+45000);
+  call(a,'guess',{round:0,cents:10000});call(b,'guess',{round:0,cents:11000});
+  assert.throws(()=>call(b,'revealSkip'),/hôte/);
+  call(a,'revealSkip',{round:0,roundKey:view().roundKey});assert.equal(view().revealSkipped,true);
+});
 test('Une partie complète, sans fuite, réponses verrouillées, égalités et revanche',()=>{const {a,b,call,view}=setup();assert.throws(()=>call(b,'start'),/hôte/);call(a,'start');for(let round=0;round<5;round++){const s=view(a);assert.equal(s.round,round);assert.equal(s.priceCents,undefined);assert.equal(s.source,undefined);assert.equal(s.product.priceCents,undefined);assert.ok(s.players.every(p=>!p.token));call(a,'guess',{round,cents:9000});assert.equal(view(b).myGuess,null);assert.equal(view(b).results,undefined);assert.throws(()=>call(a,'guess',{round,cents:10000}),/verrouillée/);call(b,'guess',{round,cents:11000});const r=view(a);assert.equal(r.phase,'reveal');assert.equal(r.priceCents,10000);assert.deepEqual(r.results.map(p=>p.points),[140,140]);assert.equal(r.players[0].score,(round+1)*140);view(a);assert.equal(view(a).players[0].score,(round+1)*140);call(a,'next',{round});}assert.equal(view(a).phase,'finished');call(a,'start');assert.equal(view(a).round,0);assert.equal(view(a).players[0].score,0);});
 test('Chronomètre serveur, absence à zéro, réponse tardive refusée',()=>{let now=1000;const {a,b,call,view}=setup({now:()=>now,roundMs:100});call(a,'start');call(a,'guess',{round:0,cents:10000});now+=101;assert.throws(()=>call(b,'guess',{round:0,cents:10000}),/terminée/);const s=view(a);assert.equal(s.phase,'reveal');assert.equal(s.results.find(p=>p.name==='Alex').points,0);assert.equal(s.results.find(p=>p.name==='Simon').points,150);});
 test('Identité, prix invalides et manche périmée sont rejetés',()=>{const {a,game,call}=setup();assert.throws(()=>game.state(a.code,'wrong'),/Session invalide/);call(a,'start');for(const cents of[-1,NaN,Infinity,1.2,'99',100000001])assert.throws(()=>call(a,'guess',{round:0,cents}),/prix/);assert.throws(()=>call(a,'guess',{round:9,cents:100}),/autre manche/);assert.throws(()=>game.join(a.code,'Late'),/commencée/);});

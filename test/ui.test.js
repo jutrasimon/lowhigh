@@ -20,7 +20,10 @@ test('Les quatre modes rendent le lobby, la manche, la révélation et la fin',a
     const a=game.create('A'),b=game.join(a.code,'B');
     const call=(who,type,data={})=>game.action(who.code,who.token,type,data),view=()=>game.state(a.code,a.token);
     call(a,'config',{mode,historyYear:mode==='history'?2000:'mix'});
-    assert.match(draw(view()),/mode-select/);
+    const lobby=draw(view());
+    assert.match(lobby,/mode-select/);
+    assert.match(lobby,new RegExp(`mode-bubble--${mode}`));
+    assert.match(lobby,mode==='history'?/En 2000, combien ça coûtait au Canada\?/:/mode-bubble.*role="status"/);
     assert.match(draw(view()),/id="bots"/);
     call(a,'start');assert.match(draw(view()),/guess-form/);
     for(let round=0;round<5;round++){

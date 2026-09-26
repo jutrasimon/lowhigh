@@ -25,7 +25,7 @@ PRODUCTS = {
 YEARS = (1995, 2000, 2010, 2020)
 groceries = json.loads((ROOT / 'data/grocery.json').read_text())
 PHOTO_NAMES = {
-    'Eggs, 1 dozen': 'Extra gros œufs', 'Bread, 675 grams': 'Pain blanc',
+    'Eggs, 1 dozen': 'Extra gros œufs', 'Bread, 675 grams': 'Pain aux graines non céréalières',
     'Apples, 1 kilogram': 'Pommes Honeycrisp', 'Celery, 1 kilogram': 'Céleri emballé',
     'Coffee, roasted, 300 grams': 'Café en grains aroma di casa',
 }

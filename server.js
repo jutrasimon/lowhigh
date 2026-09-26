@@ -3,6 +3,7 @@ import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {Game} from './game.js';
 import {fetchRecentProducts} from './scripts/update-products.js';
+import {verifyProducts} from './scripts/audit-images.js';
 const products=JSON.parse(await readFile(new URL('./data/products.json',import.meta.url),'utf8'));
 let liveProducts=[];
 try{liveProducts=JSON.parse(await readFile(new URL('./data/open-prices.json',import.meta.url),'utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
@@ -10,7 +11,9 @@ const snapshots=[];
 for(const file of ['grocery.json','collectibles.json','history.json']){
   try{snapshots.push(...JSON.parse(await readFile(new URL('./data/'+file,import.meta.url),'utf8')));}catch(e){if(e.code!=='ENOENT')throw e;}
 }
-export function createServer(game=new Game([...products,...liveProducts,...snapshots]),catalogLoader=fetchRecentProducts) {
+const verified=new Set(JSON.parse(await readFile(new URL('./data/verified-photos.json',import.meta.url),'utf8')).urls);
+const curated=[...products,...liveProducts,...snapshots].map(p=>({...p,images:(p.images||[]).filter(url=>verified.has(url))})).filter(p=>p.images.length);
+export function createServer(game=new Game(curated),catalogLoader=fetchRecentProducts) {
   const limits=new Map();
   let lastRefresh=0,refreshPromise=null;
   const server=http.createServer(async(req,res)=>{
@@ -43,9 +46,11 @@ export function createServer(game=new Game([...products,...liveProducts,...snaps
           if(room.host!==player.id)return send(403,{error:'Seul l’hôte peut actualiser les produits.'});
           if(room.phase!=='lobby'&&room.phase!=='finished')return send(400,{error:'Actualise les produits entre deux parties.'});
           if(Date.now()-lastRefresh<15*60000)return send(429,{error:'Les produits ont déjà été actualisés. Réessaie dans 15 minutes.'});
-          refreshPromise ||= catalogLoader().then(fresh=>{
+          refreshPromise ||= catalogLoader().then(async fresh=>{
             if(!Array.isArray(fresh)||fresh.length<5)throw Error('Catalogue insuffisant; produits précédents conservés.');
-            game.products=[...products,...snapshots,...fresh];lastRefresh=Date.now();return fresh.length;
+            const checked=catalogLoader===fetchRecentProducts?(await verifyProducts(fresh)).products:fresh;
+            if(checked.length<5)throw Error('Moins de 5 produits avec photo valide; catalogue précédent conservé.');
+            game.products=[...curated.filter(p=>p.provider!=='open-prices'),...checked];lastRefresh=Date.now();return checked.length;
           }).finally(()=>{refreshPromise=null;});
           const count=await refreshPromise;
           return send(200,{...game.state(match[1],token),catalogCount:count});

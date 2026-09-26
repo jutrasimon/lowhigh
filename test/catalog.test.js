@@ -5,6 +5,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {selectProducts,updateProducts} from '../scripts/update-products.js';
+import {verifyProducts} from '../scripts/audit-images.js';
 import {createServer} from '../server.js';
 import {Game} from '../game.js';
 
@@ -18,6 +19,14 @@ test('Les relevés canadiens valides deviennent des produits avec vendeur, date 
   assert.equal(products.length,1);
   assert.deepEqual({price:products[0].priceCents,seller:products[0].seller,date:products[0].checkedAt,source:products[0].source},
     {price:1449,seller:'Costco',date:'2026-09-19',source:'https://prices.openfoodfacts.org/prices/1'});
+});
+test('L’audit écarte les photos mortes et les produits sans autre image',async()=>{
+  const good='https://cdn.epiceries.ca/good.jpg',bad='https://cdn.epiceries.ca/missing.jpg';
+  const result=await verifyProducts([{id:'a',images:[bad,good]},{id:'b',images:[bad]}],{
+    request:async url=>new Response(null,{status:url===good?200:404,headers:{'content-type':url===good?'image/jpeg':'text/html'}})
+  });
+  assert.deepEqual(result.products.map(x=>({id:x.id,images:x.images})),[{id:'a',images:[good]}]);
+  assert.equal(result.checked,2);
 });
 
 test('Une mise à jour insuffisante préserve le catalogue précédent',async()=>{

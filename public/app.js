@@ -23,8 +23,10 @@ function facts(p,s){
 function descriptionOf(p){
  if(!['epiceries-ca','open-prices'].includes(p.provider))return p.description;
  const parts=p.description.split(' · '),brand=parts.length>1&&parts[0]!==p.category?parts[0]:'';
- const format=formatOf(p),intro=p.category?`Catégorie ${p.category.toLowerCase()}`:'Produit du quotidien';
- return `${intro}${brand?` · marque ${brand}`:''}${format?` · format ${format}`:''}. Article présenté par ${p.seller}.`;
+ const format=formatOf(p),name=`${p.name}${brand?` de ${brand}`:''}.`;
+ if(/\b(?:paquet|lot) de \d+\b/i.test(p.name))return `${name} Ce paquet est vendu chez ${p.seller}.`;
+ if(format)return `${name} ${/prix pour/i.test(p.description)?`Prix indiqué pour ${format} chez ${p.seller}.`:`Format de ${format}, vendu chez ${p.seller}.`}`;
+ return `${name} Vendu chez ${p.seller}.`;
 }
 function revealOverlay(s,host){
  const elapsed=Math.max(0,Date.now()+offset-s.revealedAt),max=Math.max(s.priceCents,...s.results.map(r=>r.guess||0),1);

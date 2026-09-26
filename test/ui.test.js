@@ -31,7 +31,11 @@ test('Les quatre modes rendent le lobby, la manche, la révélation et la fin',a
       call(a,'guess',{round,cents:100});call(b,'guess',{round,cents:0});
       const reveal=draw(view());
       assert.match(reveal,mode==='auction'?/MISES RÉVÉLÉES/:/PRIX DE RÉFÉRENCE/);
-      if(mode!=='auction'){assert.match(reveal,/id="reveal-overlay"/);assert.match(reveal,/id="skip-reveal"/);}
+      if(mode!=='auction'){
+        assert.match(reveal,/id="reveal-overlay"/);assert.match(reveal,/id="skip-reveal"/);
+        assert.match(reveal,/data-width="[\d.]+"/);
+        assert.doesNotMatch(reveal,/class="reveal-bar" style=/);
+      }
       call(a,'next',{round});
     }
     assert.match(draw(view()),mode==='auction'?/VENTE FINALE/:/CLASSEMENT FINAL/);

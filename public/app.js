@@ -31,12 +31,19 @@ function descriptionOf(p){
 function revealOverlay(s,host){
  const elapsed=Math.max(0,Date.now()+offset-s.revealedAt),max=Math.max(s.priceCents,...s.results.map(r=>r.guess||0),1);
  const rows=s.players.map(p=>s.results.find(r=>r.id===p.id)).filter(Boolean);
- return `<div id="reveal-overlay" class="reveal-overlay" role="dialog" aria-label="Révélation du prix" style="--elapsed:-${Math.round(elapsed)}ms"><div class="reveal-panel"><div class="reveal-head"><span>MANCHE ${s.round+1} · ${esc(s.product.name)}</span>${host?'<button id="skip-reveal" class="text-button" type="button">Passer l’animation →</button>':''}</div><div class="reveal-kicker">TOUT LE MONDE A MISÉ…</div><h2>Le vrai prix était<span class="reveal-dots">…</span></h2><div class="reveal-target">${money(s.priceCents)}</div><div class="reveal-rows">${rows.map((r,i)=>`<div class="reveal-row ${r.closest?'closest':''}" style="--delay:${350+i*170}ms"><div class="reveal-person"><b>${esc(r.name)}</b><span>${r.guess===null?'Aucune réponse':money(r.guess)}</span></div><div class="reveal-track"><i class="reveal-bar" style="--bar:${Math.max(1,100*(r.guess||0)/max)}%"></i><i class="reveal-mark" style="left:${100*s.priceCents/max}%"></i></div><div class="reveal-gain">+<span data-points="${r.points}">0</span>${r.closest?'<small>+50 inclus</small>':''}</div></div>`).join('')}</div><p class="reveal-caption">La ligne indique le vrai prix. Le plus proche gagne +50 points.</p></div></div>`;
+ return `<div id="reveal-overlay" class="reveal-overlay" role="dialog" aria-label="Révélation du prix" data-elapsed="${Math.round(elapsed)}"><div class="reveal-panel"><div class="reveal-head"><span>MANCHE ${s.round+1} · ${esc(s.product.name)}</span>${host?'<button id="skip-reveal" class="text-button" type="button">Passer l’animation →</button>':''}</div><div class="reveal-kicker">TOUT LE MONDE A MISÉ…</div><h2>Le vrai prix était<span class="reveal-dots">…</span></h2><div class="reveal-target">${money(s.priceCents)}</div><div class="reveal-rows">${rows.map((r,i)=>`<div class="reveal-row ${r.closest?'closest':''}" data-delay="${350+i*170}"><div class="reveal-person"><b>${esc(r.name)}</b><span>${r.guess===null?'Aucune réponse':money(r.guess)}</span></div><div class="reveal-track"><i class="reveal-bar" data-width="${Math.max(1,100*(r.guess||0)/max)}"></i><i class="reveal-mark" data-left="${100*s.priceCents/max}"></i></div><div class="reveal-gain">+<span data-points="${r.points}">0</span>${r.closest?'<small>+50 inclus</small>':''}</div></div>`).join('')}</div><p class="reveal-caption">La ligne indique le vrai prix. Le plus proche gagne +50 points.</p></div></div>`;
 }
 function animateReveal(){
  cancelAnimationFrame(revealFrame);
  const overlay=document.querySelector('#reveal-overlay');
  if(!overlay?.dataset)return;
+ overlay.style.setProperty('--elapsed',`${-Number(overlay.dataset.elapsed)}ms`);
+ overlay.querySelectorAll('.reveal-row').forEach(row=>{
+   row.style.setProperty('--delay',`${Number(row.dataset.delay)}ms`);
+   const bar=row.querySelector('.reveal-bar'),mark=row.querySelector('.reveal-mark');
+   bar.style.setProperty('--bar',`${Number(bar.dataset.width)}%`);
+   mark.style.left=`${Number(mark.dataset.left)}%`;
+ });
  if(matchMedia('(prefers-reduced-motion: reduce)').matches){overlay.remove();const next=document.querySelector('#next');if(next)next.disabled=false;return;}
  const token=state.code+':'+state.round+':'+state.roundKey;
  function frame(){
